@@ -1,0 +1,2559 @@
+2025-12-09 08:54:08,000:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:54:08,000:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:54:08,001:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:54:08,001:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:55:34,636:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:55:34,636:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:55:34,636:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:55:34,636:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 08:56:34,229:INFO:PyCaret ClassificationExperiment
+2025-12-09 08:56:34,229:INFO:Logging name: clf-default-name
+2025-12-09 08:56:34,229:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2025-12-09 08:56:34,229:INFO:version 3.3.2
+2025-12-09 08:56:34,229:INFO:Initializing setup()
+2025-12-09 08:56:34,229:INFO:self.USI: f8ed
+2025-12-09 08:56:34,229:INFO:self._variable_keys: {'X', 'exp_name_log', 'gpu_n_jobs_param', 'n_jobs_param', 'X_test', 'gpu_param', 'seed', 'memory', '_ml_usecase', 'log_plots_param', 'fold_generator', 'is_multiclass', 'data', 'y', 'fix_imbalance', 'idx', 'y_test', 'logging_param', '_available_plots', 'target_param', 'fold_groups_param', 'html_param', 'X_train', 'USI', 'y_train', 'pipeline', 'fold_shuffle_param', 'exp_id'}
+2025-12-09 08:56:34,229:INFO:Checking environment
+2025-12-09 08:56:34,229:INFO:python_version: 3.11.6
+2025-12-09 08:56:34,229:INFO:python_build: ('tags/v3.11.6:8b6ee5b', 'Oct  2 2023 14:57:12')
+2025-12-09 08:56:34,229:INFO:machine: AMD64
+2025-12-09 08:56:34,259:INFO:platform: Windows-10-10.0.19045-SP0
+2025-12-09 08:56:34,263:INFO:Memory: svmem(total=12780036096, available=1869553664, percent=85.4, used=10910482432, free=1869553664)
+2025-12-09 08:56:34,263:INFO:Physical Core: 2
+2025-12-09 08:56:34,263:INFO:Logical Core: 4
+2025-12-09 08:56:34,263:INFO:Checking libraries
+2025-12-09 08:56:34,263:INFO:System:
+2025-12-09 08:56:34,263:INFO:    python: 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]
+2025-12-09 08:56:34,263:INFO:executable: E:\Sprint04\venv\Scripts\python.exe
+2025-12-09 08:56:34,263:INFO:   machine: Windows-10-10.0.19045-SP0
+2025-12-09 08:56:34,263:INFO:PyCaret required dependencies:
+2025-12-09 08:56:34,263:WARNING:E:\Sprint04\venv\Lib\site-packages\_distutils_hack\__init__.py:33: UserWarning:
+
+Setuptools is replacing distutils.
+
+
+2025-12-09 08:56:34,329:INFO:                 pip: 25.3
+2025-12-09 08:56:34,329:INFO:          setuptools: 65.5.0
+2025-12-09 08:56:34,329:INFO:             pycaret: 3.3.2
+2025-12-09 08:56:34,329:INFO:             IPython: 9.8.0
+2025-12-09 08:56:34,329:INFO:          ipywidgets: 8.1.8
+2025-12-09 08:56:34,329:INFO:                tqdm: 4.67.1
+2025-12-09 08:56:34,329:INFO:               numpy: 1.26.4
+2025-12-09 08:56:34,329:INFO:              pandas: 2.1.4
+2025-12-09 08:56:34,329:INFO:              jinja2: 3.1.6
+2025-12-09 08:56:34,330:INFO:               scipy: 1.11.4
+2025-12-09 08:56:34,330:INFO:              joblib: 1.3.2
+2025-12-09 08:56:34,330:INFO:             sklearn: 1.4.2
+2025-12-09 08:56:34,330:INFO:                pyod: 2.0.6
+2025-12-09 08:56:34,330:INFO:            imblearn: 0.14.0
+2025-12-09 08:56:34,330:INFO:   category_encoders: 2.7.0
+2025-12-09 08:56:34,330:INFO:            lightgbm: 4.6.0
+2025-12-09 08:56:34,330:INFO:               numba: 0.62.1
+2025-12-09 08:56:34,330:INFO:            requests: 2.32.5
+2025-12-09 08:56:34,330:INFO:          matplotlib: 3.7.5
+2025-12-09 08:56:34,330:INFO:          scikitplot: 0.3.7
+2025-12-09 08:56:34,330:INFO:         yellowbrick: 1.5
+2025-12-09 08:56:34,331:INFO:              plotly: 6.5.0
+2025-12-09 08:56:34,331:INFO:    plotly-resampler: Not installed
+2025-12-09 08:56:34,331:INFO:             kaleido: 1.2.0
+2025-12-09 08:56:34,331:INFO:           schemdraw: 0.15
+2025-12-09 08:56:34,331:INFO:         statsmodels: 0.14.6
+2025-12-09 08:56:34,331:INFO:              sktime: 0.26.0
+2025-12-09 08:56:34,331:INFO:               tbats: 1.1.3
+2025-12-09 08:56:34,331:INFO:            pmdarima: 2.0.4
+2025-12-09 08:56:34,331:INFO:              psutil: 7.1.3
+2025-12-09 08:56:34,331:INFO:          markupsafe: 3.0.3
+2025-12-09 08:56:34,331:INFO:             pickle5: Not installed
+2025-12-09 08:56:34,331:INFO:         cloudpickle: 3.1.2
+2025-12-09 08:56:34,331:INFO:         deprecation: 2.1.0
+2025-12-09 08:56:34,331:INFO:              xxhash: 3.6.0
+2025-12-09 08:56:34,331:INFO:           wurlitzer: Not installed
+2025-12-09 08:56:34,331:INFO:PyCaret optional dependencies:
+2025-12-09 08:56:34,349:INFO:                shap: Not installed
+2025-12-09 08:56:34,349:INFO:           interpret: Not installed
+2025-12-09 08:56:34,349:INFO:                umap: Not installed
+2025-12-09 08:56:34,349:INFO:     ydata_profiling: 4.18.0
+2025-12-09 08:56:34,349:INFO:  explainerdashboard: Not installed
+2025-12-09 08:56:34,350:INFO:             autoviz: Not installed
+2025-12-09 08:56:34,350:INFO:           fairlearn: Not installed
+2025-12-09 08:56:34,350:INFO:          deepchecks: Not installed
+2025-12-09 08:56:34,350:INFO:             xgboost: Not installed
+2025-12-09 08:56:34,350:INFO:            catboost: Not installed
+2025-12-09 08:56:34,350:INFO:              kmodes: Not installed
+2025-12-09 08:56:34,350:INFO:             mlxtend: Not installed
+2025-12-09 08:56:34,350:INFO:       statsforecast: Not installed
+2025-12-09 08:56:34,350:INFO:        tune_sklearn: Not installed
+2025-12-09 08:56:34,350:INFO:                 ray: Not installed
+2025-12-09 08:56:34,350:INFO:            hyperopt: Not installed
+2025-12-09 08:56:34,350:INFO:              optuna: Not installed
+2025-12-09 08:56:34,350:INFO:               skopt: Not installed
+2025-12-09 08:56:34,350:INFO:              mlflow: Not installed
+2025-12-09 08:56:34,350:INFO:              gradio: Not installed
+2025-12-09 08:56:34,350:INFO:             fastapi: Not installed
+2025-12-09 08:56:34,350:INFO:             uvicorn: Not installed
+2025-12-09 08:56:34,350:INFO:              m2cgen: Not installed
+2025-12-09 08:56:34,350:INFO:           evidently: Not installed
+2025-12-09 08:56:34,351:INFO:               fugue: Not installed
+2025-12-09 08:56:34,351:INFO:           streamlit: 1.52.1
+2025-12-09 08:56:34,351:INFO:             prophet: Not installed
+2025-12-09 08:56:34,351:INFO:None
+2025-12-09 08:56:34,351:INFO:Set up data.
+2025-12-09 08:56:34,358:INFO:Set up folding strategy.
+2025-12-09 08:56:34,359:INFO:Set up train/test split.
+2025-12-09 08:56:34,364:INFO:Set up index.
+2025-12-09 08:56:34,364:INFO:Assigning column types.
+2025-12-09 08:56:34,371:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2025-12-09 08:56:34,433:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,438:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,484:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,486:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,545:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,546:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,591:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,591:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,592:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2025-12-09 08:56:34,650:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,689:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,689:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,747:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-12-09 08:56:34,782:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,783:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,783:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2025-12-09 08:56:34,880:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,880:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,974:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,974:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:34,977:INFO:Preparing preprocessing pipeline...
+2025-12-09 08:56:34,979:INFO:Set up simple imputation.
+2025-12-09 08:56:34,979:INFO:Set up removing multicollinearity.
+2025-12-09 08:56:34,979:INFO:Set up feature normalization.
+2025-12-09 08:56:34,980:INFO:Set up column name cleaning.
+2025-12-09 08:56:35,176:INFO:Finished creating preprocessing pipeline.
+2025-12-09 08:56:35,184:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\Yesica\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['id_producto', 'total_unidades',
+                                             'total_ventas',
+                                             'cant_transacciones',
+                                             'precio_promedio',
+                                             'ventas_por_transaccion',
+                                             'unidades_por_transaccion'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_val...
+                 TransformerWrapper(exclude=[], include=None,
+                                    transformer=RemoveMulticollinearity(threshold=0.9))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True))),
+                ('clean_column_names',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=CleanColumnNames(match='[\\]\\[\\,\\{\\}\\"\\:]+')))],
+         verbose=False)
+2025-12-09 08:56:35,184:INFO:Creating final display dataframe.
+2025-12-09 08:56:35,389:INFO:Setup _display_container:                     Description             Value
+0                    Session id               789
+1                        Target     nivel_demanda
+2                   Target type        Multiclass
+3           Original data shape          (95, 18)
+4        Transformed data shape          (95, 17)
+5   Transformed train set shape          (66, 17)
+6    Transformed test set shape          (29, 17)
+7              Numeric features                 7
+8                    Preprocess              True
+9               Imputation type            simple
+10           Numeric imputation              mean
+11       Categorical imputation              mode
+12     Remove multicollinearity              True
+13  Multicollinearity threshold               0.9
+14                    Normalize              True
+15             Normalize method            zscore
+16               Fold Generator   StratifiedKFold
+17                  Fold Number                10
+18                     CPU Jobs                -1
+19                      Use GPU             False
+20               Log Experiment             False
+21              Experiment Name  clf-default-name
+22                          USI              f8ed
+2025-12-09 08:56:35,484:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:35,485:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:35,577:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:35,578:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-12-09 08:56:35,580:INFO:setup() successfully completed in 2.05s...............
+2025-12-09 08:56:35,584:INFO:Initializing get_config()
+2025-12-09 08:56:35,584:INFO:get_config(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, variable=train)
+2025-12-09 08:56:35,585:INFO:Variable: 'train' used to return the transformed values in PyCaret 2.x. From PyCaret 3.x, this will return the raw values. If you need the transformed values, call get_config with 'train_transformed' instead.
+2025-12-09 08:56:35,585:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\pycaret_experiment\pycaret_experiment.py:321: UserWarning:
+
+Variable: 'train' used to return the transformed values in PyCaret 2.x. From PyCaret 3.x, this will return the raw values. If you need the transformed values, call get_config with 'train_transformed' instead.
+
+
+2025-12-09 08:56:35,619:INFO:Variable:  returned as     id_producto  total_unidades  total_ventas  cant_transacciones  ...  categoria_Lácteos y refrigerados  categoria_Panificados  categoria_Snacks y golosinas  nivel_demanda
+76           80               8         15848                   3  ...                             False                  False                         False              0
+59           61               3         14946                   2  ...                             False                  False                         False              0
+31           32              18         40212                   5  ...                             False                  False                          True              2
+40           41              19         16340                   6  ...                             False                  False                         False              2
+45           46               5         15180                   1  ...                             False                  False                         False              0
+..          ...             ...           ...                 ...  ...                               ...                    ...                           ...            ...
+89           93               9         19278                   3  ...                             False                  False                         False              1
+42           43              27         23949                   7  ...                             False                  False                         False              2
+81           85               5          9280                   3  ...                             False                  False                         False              0
+2             3               4         19856                   1  ...                             False                  False                         False              0
+19           20               9         14139                   3  ...                             False                   True                         False              1
+
+[66 rows x 18 columns]
+2025-12-09 08:56:35,619:INFO:get_config() successfully completed......................................
+2025-12-09 08:56:35,620:INFO:Initializing get_config()
+2025-12-09 08:56:35,620:INFO:get_config(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, variable=test)
+2025-12-09 08:56:35,620:INFO:Variable: 'test' used to return the transformed values in PyCaret 2.x. From PyCaret 3.x, this will return the raw values. If you need the transformed values, call get_config with 'test_transformed' instead.
+2025-12-09 08:56:35,620:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\pycaret_experiment\pycaret_experiment.py:321: UserWarning:
+
+Variable: 'test' used to return the transformed values in PyCaret 2.x. From PyCaret 3.x, this will return the raw values. If you need the transformed values, call get_config with 'test_transformed' instead.
+
+
+2025-12-09 08:56:35,654:INFO:Variable:  returned as     id_producto  total_unidades  total_ventas  cant_transacciones  ...  categoria_Lácteos y refrigerados  categoria_Panificados  categoria_Snacks y golosinas  nivel_demanda
+44           45               9          6705                   2  ...                             False                  False                         False              1
+3             4              16         32528                   5  ...                             False                  False                         False              2
+41           42               4          4780                   1  ...                             False                  False                         False              0
+9            10               8         39064                   5  ...                             False                  False                         False              0
+73           77               4         19112                   1  ...                             False                  False                         False              0
+67           70               9         36549                   5  ...                             False                  False                         False              1
+6             7              14         45766                   4  ...                             False                  False                         False              2
+86           90              12         34824                   4  ...                             False                  False                         False              1
+72           76              20         85720                   5  ...                             False                  False                         False              2
+50           51               5          8725                   3  ...                             False                  False                         False              0
+16           17               9         43506                   3  ...                              True                  False                         False              1
+65           67               4         18876                   1  ...                             False                  False                         False              0
+68           71               4          2032                   1  ...                             False                  False                         False              0
+55           56               5         12660                   2  ...                             False                  False                         False              0
+74           78              10         42890                   3  ...                             False                  False                         False              1
+13           14               5          8615                   2  ...                              True                  False                         False              0
+69           72              21         81396                   7  ...                             False                  False                         False              2
+33           34              15          7545                   4  ...                             False                  False                          True              2
+52           53              21         34944                   7  ...                             False                  False                         False              2
+48           49               6         15072                   2  ...                             False                  False                         False              0
+1             2               9         44757                   3  ...                             False                  False                         False              1
+49           50              11          7997                   4  ...                             False                  False                         False              1
+61           63               6         26022                   2  ...                             False                  False                         False              0
+91           95              14         22134                   4  ...                             False                  False                         False              2
+30           31               8         27272                   4  ...                             False                  False                         False              0
+17           18              26         89544                   9  ...                              True                  False                         False              2
+23           24              11         14355                   5  ...                             False                  False                          True              1
+63           65              13         31499                   5  ...                             False                  False                         False              2
+85           89               4          4012                   1  ...                             False                  False                         False              0
+
+[29 rows x 18 columns]
+2025-12-09 08:56:35,654:INFO:get_config() successfully completed......................................
+2025-12-09 08:56:35,656:INFO:Initializing get_config()
+2025-12-09 08:56:35,656:INFO:get_config(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, variable=fold_generator)
+2025-12-09 08:56:35,657:INFO:Variable: fo returned as StratifiedKFold(n_splits=10, random_state=None, shuffle=False)
+2025-12-09 08:56:35,657:INFO:get_config() successfully completed......................................
+2025-12-09 08:56:42,461:INFO:Initializing compare_models()
+2025-12-09 08:56:42,461:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, include=None, exclude=None, fold=None, round=4, cross_validation=True, sort=AUC, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'AUC', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>})
+2025-12-09 08:56:42,462:INFO:Checking exceptions
+2025-12-09 08:56:42,477:INFO:Preparing display monitor
+2025-12-09 08:56:42,483:INFO:Initializing Logistic Regression
+2025-12-09 08:56:42,483:INFO:Total runtime is 0.0 minutes
+2025-12-09 08:56:42,484:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:42,484:INFO:Initializing create_model()
+2025-12-09 08:56:42,484:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:42,485:INFO:Checking exceptions
+2025-12-09 08:56:42,485:INFO:Importing libraries
+2025-12-09 08:56:42,485:INFO:Copying training dataset
+2025-12-09 08:56:42,499:INFO:Defining folds
+2025-12-09 08:56:42,499:INFO:Declaring metric variables
+2025-12-09 08:56:42,499:INFO:Importing untrained model
+2025-12-09 08:56:42,500:INFO:Logistic Regression Imported successfully
+2025-12-09 08:56:42,501:INFO:Starting cross validation
+2025-12-09 08:56:42,503:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:49,983:WARNING:E:\Sprint04\venv\Lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2025-12-09 08:56:49,983:WARNING:E:\Sprint04\venv\Lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2025-12-09 08:56:50,096:WARNING:E:\Sprint04\venv\Lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2025-12-09 08:56:50,272:WARNING:E:\Sprint04\venv\Lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2025-12-09 08:56:50,552:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,555:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,667:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,803:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,841:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,872:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,905:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,912:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:50,955:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:51,003:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:51,034:INFO:Calculating mean and std
+2025-12-09 08:56:51,036:INFO:Creating metrics dataframe
+2025-12-09 08:56:51,043:INFO:Uploading results into container
+2025-12-09 08:56:51,044:INFO:Uploading model into container now
+2025-12-09 08:56:51,045:INFO:_master_model_container: 1
+2025-12-09 08:56:51,045:INFO:_display_container: 2
+2025-12-09 08:56:51,046:INFO:LogisticRegression(max_iter=1000, random_state=789)
+2025-12-09 08:56:51,046:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:51,317:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:51,317:INFO:Creating metrics dataframe
+2025-12-09 08:56:51,322:INFO:Initializing K Neighbors Classifier
+2025-12-09 08:56:51,322:INFO:Total runtime is 0.14731847047805785 minutes
+2025-12-09 08:56:51,322:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:51,323:INFO:Initializing create_model()
+2025-12-09 08:56:51,323:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:51,323:INFO:Checking exceptions
+2025-12-09 08:56:51,323:INFO:Importing libraries
+2025-12-09 08:56:51,323:INFO:Copying training dataset
+2025-12-09 08:56:51,332:INFO:Defining folds
+2025-12-09 08:56:51,333:INFO:Declaring metric variables
+2025-12-09 08:56:51,333:INFO:Importing untrained model
+2025-12-09 08:56:51,333:INFO:K Neighbors Classifier Imported successfully
+2025-12-09 08:56:51,334:INFO:Starting cross validation
+2025-12-09 08:56:51,335:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:51,441:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:51,532:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:51,548:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:51,625:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:51,655:INFO:Calculating mean and std
+2025-12-09 08:56:51,656:INFO:Creating metrics dataframe
+2025-12-09 08:56:51,658:INFO:Uploading results into container
+2025-12-09 08:56:51,658:INFO:Uploading model into container now
+2025-12-09 08:56:51,659:INFO:_master_model_container: 2
+2025-12-09 08:56:51,659:INFO:_display_container: 2
+2025-12-09 08:56:51,659:INFO:KNeighborsClassifier(n_jobs=-1)
+2025-12-09 08:56:51,659:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:51,865:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:51,865:INFO:Creating metrics dataframe
+2025-12-09 08:56:51,872:INFO:Initializing Naive Bayes
+2025-12-09 08:56:51,872:INFO:Total runtime is 0.15648947159449259 minutes
+2025-12-09 08:56:51,872:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:51,872:INFO:Initializing create_model()
+2025-12-09 08:56:51,872:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:51,873:INFO:Checking exceptions
+2025-12-09 08:56:51,873:INFO:Importing libraries
+2025-12-09 08:56:51,873:INFO:Copying training dataset
+2025-12-09 08:56:51,880:INFO:Defining folds
+2025-12-09 08:56:51,880:INFO:Declaring metric variables
+2025-12-09 08:56:51,881:INFO:Importing untrained model
+2025-12-09 08:56:51,881:INFO:Naive Bayes Imported successfully
+2025-12-09 08:56:51,882:INFO:Starting cross validation
+2025-12-09 08:56:51,883:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:52,099:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:52,187:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:52,200:INFO:Calculating mean and std
+2025-12-09 08:56:52,201:INFO:Creating metrics dataframe
+2025-12-09 08:56:52,205:INFO:Uploading results into container
+2025-12-09 08:56:52,205:INFO:Uploading model into container now
+2025-12-09 08:56:52,206:INFO:_master_model_container: 3
+2025-12-09 08:56:52,206:INFO:_display_container: 2
+2025-12-09 08:56:52,206:INFO:GaussianNB()
+2025-12-09 08:56:52,206:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:52,394:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:52,395:INFO:Creating metrics dataframe
+2025-12-09 08:56:52,398:INFO:Initializing Decision Tree Classifier
+2025-12-09 08:56:52,398:INFO:Total runtime is 0.16525170803070066 minutes
+2025-12-09 08:56:52,398:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:52,399:INFO:Initializing create_model()
+2025-12-09 08:56:52,399:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:52,399:INFO:Checking exceptions
+2025-12-09 08:56:52,399:INFO:Importing libraries
+2025-12-09 08:56:52,399:INFO:Copying training dataset
+2025-12-09 08:56:52,406:INFO:Defining folds
+2025-12-09 08:56:52,406:INFO:Declaring metric variables
+2025-12-09 08:56:52,406:INFO:Importing untrained model
+2025-12-09 08:56:52,407:INFO:Decision Tree Classifier Imported successfully
+2025-12-09 08:56:52,407:INFO:Starting cross validation
+2025-12-09 08:56:52,408:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:52,788:INFO:Calculating mean and std
+2025-12-09 08:56:52,789:INFO:Creating metrics dataframe
+2025-12-09 08:56:52,791:INFO:Uploading results into container
+2025-12-09 08:56:52,792:INFO:Uploading model into container now
+2025-12-09 08:56:52,792:INFO:_master_model_container: 4
+2025-12-09 08:56:52,792:INFO:_display_container: 2
+2025-12-09 08:56:52,792:INFO:DecisionTreeClassifier(random_state=789)
+2025-12-09 08:56:52,792:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:52,967:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:52,968:INFO:Creating metrics dataframe
+2025-12-09 08:56:52,971:INFO:Initializing SVM - Linear Kernel
+2025-12-09 08:56:52,971:INFO:Total runtime is 0.17480906248092648 minutes
+2025-12-09 08:56:52,971:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:52,971:INFO:Initializing create_model()
+2025-12-09 08:56:52,972:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=svm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:52,972:INFO:Checking exceptions
+2025-12-09 08:56:52,972:INFO:Importing libraries
+2025-12-09 08:56:52,972:INFO:Copying training dataset
+2025-12-09 08:56:52,978:INFO:Defining folds
+2025-12-09 08:56:52,978:INFO:Declaring metric variables
+2025-12-09 08:56:52,979:INFO:Importing untrained model
+2025-12-09 08:56:52,979:INFO:SVM - Linear Kernel Imported successfully
+2025-12-09 08:56:52,979:INFO:Starting cross validation
+2025-12-09 08:56:52,981:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:53,199:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,199:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,199:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,200:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,208:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,208:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,321:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,327:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,329:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,331:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,345:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,477:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,477:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,502:INFO:Calculating mean and std
+2025-12-09 08:56:53,503:INFO:Creating metrics dataframe
+2025-12-09 08:56:53,506:INFO:Uploading results into container
+2025-12-09 08:56:53,506:INFO:Uploading model into container now
+2025-12-09 08:56:53,506:INFO:_master_model_container: 5
+2025-12-09 08:56:53,506:INFO:_display_container: 2
+2025-12-09 08:56:53,507:INFO:SGDClassifier(eta0=0.001, n_jobs=-1, random_state=789)
+2025-12-09 08:56:53,507:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:53,715:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:53,715:INFO:Creating metrics dataframe
+2025-12-09 08:56:53,718:INFO:Initializing Ridge Classifier
+2025-12-09 08:56:53,718:INFO:Total runtime is 0.1872633616129557 minutes
+2025-12-09 08:56:53,718:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:53,719:INFO:Initializing create_model()
+2025-12-09 08:56:53,719:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=ridge, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:53,720:INFO:Checking exceptions
+2025-12-09 08:56:53,720:INFO:Importing libraries
+2025-12-09 08:56:53,720:INFO:Copying training dataset
+2025-12-09 08:56:53,726:INFO:Defining folds
+2025-12-09 08:56:53,726:INFO:Declaring metric variables
+2025-12-09 08:56:53,727:INFO:Importing untrained model
+2025-12-09 08:56:53,727:INFO:Ridge Classifier Imported successfully
+2025-12-09 08:56:53,728:INFO:Starting cross validation
+2025-12-09 08:56:53,730:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:53,831:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,832:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,838:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,841:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,842:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,845:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:53,867:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,942:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,947:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,950:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:53,973:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:54,026:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:54,026:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:54,032:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:54,043:INFO:Calculating mean and std
+2025-12-09 08:56:54,044:INFO:Creating metrics dataframe
+2025-12-09 08:56:54,046:INFO:Uploading results into container
+2025-12-09 08:56:54,047:INFO:Uploading model into container now
+2025-12-09 08:56:54,047:INFO:_master_model_container: 6
+2025-12-09 08:56:54,048:INFO:_display_container: 2
+2025-12-09 08:56:54,048:INFO:RidgeClassifier(random_state=789)
+2025-12-09 08:56:54,048:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:54,226:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:54,226:INFO:Creating metrics dataframe
+2025-12-09 08:56:54,229:INFO:Initializing Random Forest Classifier
+2025-12-09 08:56:54,229:INFO:Total runtime is 0.1957791447639465 minutes
+2025-12-09 08:56:54,229:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:54,229:INFO:Initializing create_model()
+2025-12-09 08:56:54,229:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=rf, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:54,229:INFO:Checking exceptions
+2025-12-09 08:56:54,229:INFO:Importing libraries
+2025-12-09 08:56:54,229:INFO:Copying training dataset
+2025-12-09 08:56:54,235:INFO:Defining folds
+2025-12-09 08:56:54,235:INFO:Declaring metric variables
+2025-12-09 08:56:54,236:INFO:Importing untrained model
+2025-12-09 08:56:54,236:INFO:Random Forest Classifier Imported successfully
+2025-12-09 08:56:54,236:INFO:Starting cross validation
+2025-12-09 08:56:54,238:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:55,558:INFO:Calculating mean and std
+2025-12-09 08:56:55,560:INFO:Creating metrics dataframe
+2025-12-09 08:56:55,563:INFO:Uploading results into container
+2025-12-09 08:56:55,563:INFO:Uploading model into container now
+2025-12-09 08:56:55,564:INFO:_master_model_container: 7
+2025-12-09 08:56:55,564:INFO:_display_container: 2
+2025-12-09 08:56:55,564:INFO:RandomForestClassifier(n_jobs=-1, random_state=789)
+2025-12-09 08:56:55,564:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:55,745:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:55,746:INFO:Creating metrics dataframe
+2025-12-09 08:56:55,757:INFO:Initializing Quadratic Discriminant Analysis
+2025-12-09 08:56:55,757:INFO:Total runtime is 0.22124478022257485 minutes
+2025-12-09 08:56:55,757:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:55,758:INFO:Initializing create_model()
+2025-12-09 08:56:55,758:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=qda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:55,758:INFO:Checking exceptions
+2025-12-09 08:56:55,758:INFO:Importing libraries
+2025-12-09 08:56:55,758:INFO:Copying training dataset
+2025-12-09 08:56:55,771:INFO:Defining folds
+2025-12-09 08:56:55,771:INFO:Declaring metric variables
+2025-12-09 08:56:55,771:INFO:Importing untrained model
+2025-12-09 08:56:55,772:INFO:Quadratic Discriminant Analysis Imported successfully
+2025-12-09 08:56:55,772:INFO:Starting cross validation
+2025-12-09 08:56:55,775:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:55,847:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:55,854:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:55,903:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:55,907:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:55,910:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:55,947:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:55,954:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:55,976:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:55,985:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,046:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,067:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,084:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,115:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,115:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:960: RuntimeWarning: divide by zero encountered in power
+  X2 = np.dot(Xm, R * (S ** (-0.5)))
+
+2025-12-09 08:56:56,116:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:960: RuntimeWarning: invalid value encountered in multiply
+  X2 = np.dot(Xm, R * (S ** (-0.5)))
+
+2025-12-09 08:56:56,116:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:963: RuntimeWarning: divide by zero encountered in log
+  u = np.asarray([np.sum(np.log(s)) for s in self.scalings_])
+
+2025-12-09 08:56:56,125:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:960: RuntimeWarning: divide by zero encountered in power
+  X2 = np.dot(Xm, R * (S ** (-0.5)))
+
+2025-12-09 08:56:56,125:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:960: RuntimeWarning: invalid value encountered in multiply
+  X2 = np.dot(Xm, R * (S ** (-0.5)))
+
+2025-12-09 08:56:56,125:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:963: RuntimeWarning: divide by zero encountered in log
+  u = np.asarray([np.sum(np.log(s)) for s in self.scalings_])
+
+2025-12-09 08:56:56,144:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,152:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 619, in roc_auc_score
+    y_score = check_array(y_score, ensure_2d=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\validation.py", line 1049, in check_array
+    _assert_all_finite(
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\validation.py", line 126, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\validation.py", line 175, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input contains NaN.
+
+  warnings.warn(
+
+2025-12-09 08:56:56,160:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:56,181:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,149:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,188:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:56,214:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:56,286:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,299:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\discriminant_analysis.py:935: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2025-12-09 08:56:56,356:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,357:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:56,367:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:56,381:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:56:56,393:INFO:Calculating mean and std
+2025-12-09 08:56:56,394:INFO:Creating metrics dataframe
+2025-12-09 08:56:56,398:INFO:Uploading results into container
+2025-12-09 08:56:56,399:INFO:Uploading model into container now
+2025-12-09 08:56:56,400:INFO:_master_model_container: 8
+2025-12-09 08:56:56,400:INFO:_display_container: 2
+2025-12-09 08:56:56,400:INFO:QuadraticDiscriminantAnalysis()
+2025-12-09 08:56:56,400:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:56,885:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:56,885:INFO:Creating metrics dataframe
+2025-12-09 08:56:56,891:INFO:Initializing Ada Boost Classifier
+2025-12-09 08:56:56,891:INFO:Total runtime is 0.240139627456665 minutes
+2025-12-09 08:56:56,892:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:56,892:INFO:Initializing create_model()
+2025-12-09 08:56:56,892:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=ada, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:56,892:INFO:Checking exceptions
+2025-12-09 08:56:56,892:INFO:Importing libraries
+2025-12-09 08:56:56,893:INFO:Copying training dataset
+2025-12-09 08:56:56,927:INFO:Defining folds
+2025-12-09 08:56:56,927:INFO:Declaring metric variables
+2025-12-09 08:56:56,928:INFO:Importing untrained model
+2025-12-09 08:56:56,936:INFO:Ada Boost Classifier Imported successfully
+2025-12-09 08:56:56,936:INFO:Starting cross validation
+2025-12-09 08:56:56,939:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:57,038:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,081:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,081:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,091:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,692:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:57,728:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:57,762:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:57,815:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:57,930:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,954:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:57,964:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:58,025:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:58,456:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:58,489:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:58,506:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:58,557:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:58,608:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:58,641:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
+  warnings.warn(
+
+2025-12-09 08:56:59,063:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:59,093:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:59,130:INFO:Calculating mean and std
+2025-12-09 08:56:59,131:INFO:Creating metrics dataframe
+2025-12-09 08:56:59,134:INFO:Uploading results into container
+2025-12-09 08:56:59,135:INFO:Uploading model into container now
+2025-12-09 08:56:59,135:INFO:_master_model_container: 9
+2025-12-09 08:56:59,135:INFO:_display_container: 2
+2025-12-09 08:56:59,135:INFO:AdaBoostClassifier(random_state=789)
+2025-12-09 08:56:59,135:INFO:create_model() successfully completed......................................
+2025-12-09 08:56:59,384:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:56:59,384:INFO:Creating metrics dataframe
+2025-12-09 08:56:59,392:INFO:Initializing Gradient Boosting Classifier
+2025-12-09 08:56:59,392:INFO:Total runtime is 0.28183156649271646 minutes
+2025-12-09 08:56:59,392:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:56:59,392:INFO:Initializing create_model()
+2025-12-09 08:56:59,393:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=gbc, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:56:59,393:INFO:Checking exceptions
+2025-12-09 08:56:59,393:INFO:Importing libraries
+2025-12-09 08:56:59,393:INFO:Copying training dataset
+2025-12-09 08:56:59,398:INFO:Defining folds
+2025-12-09 08:56:59,398:INFO:Declaring metric variables
+2025-12-09 08:56:59,399:INFO:Importing untrained model
+2025-12-09 08:56:59,399:INFO:Gradient Boosting Classifier Imported successfully
+2025-12-09 08:56:59,399:INFO:Starting cross validation
+2025-12-09 08:56:59,401:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:56:59,903:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:59,914:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:59,933:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:56:59,937:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,508:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,515:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,522:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,538:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,855:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,860:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:00,880:INFO:Calculating mean and std
+2025-12-09 08:57:00,881:INFO:Creating metrics dataframe
+2025-12-09 08:57:00,883:INFO:Uploading results into container
+2025-12-09 08:57:00,883:INFO:Uploading model into container now
+2025-12-09 08:57:00,884:INFO:_master_model_container: 10
+2025-12-09 08:57:00,884:INFO:_display_container: 2
+2025-12-09 08:57:00,884:INFO:GradientBoostingClassifier(random_state=789)
+2025-12-09 08:57:00,885:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:01,063:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:57:01,064:INFO:Creating metrics dataframe
+2025-12-09 08:57:01,067:INFO:Initializing Linear Discriminant Analysis
+2025-12-09 08:57:01,067:INFO:Total runtime is 0.30974275668462115 minutes
+2025-12-09 08:57:01,067:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:57:01,067:INFO:Initializing create_model()
+2025-12-09 08:57:01,067:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=lda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:57:01,067:INFO:Checking exceptions
+2025-12-09 08:57:01,067:INFO:Importing libraries
+2025-12-09 08:57:01,068:INFO:Copying training dataset
+2025-12-09 08:57:01,074:INFO:Defining folds
+2025-12-09 08:57:01,074:INFO:Declaring metric variables
+2025-12-09 08:57:01,074:INFO:Importing untrained model
+2025-12-09 08:57:01,074:INFO:Linear Discriminant Analysis Imported successfully
+2025-12-09 08:57:01,075:INFO:Starting cross validation
+2025-12-09 08:57:01,076:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:57:01,166:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,166:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,169:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,203:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,254:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,265:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,272:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:01,285:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,302:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,343:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,345:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py:204: FitFailedWarning: Metric 'make_scorer(roc_auc_score, response_method=('decision_function', 'predict_proba'), average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 196, in _score
+    return super()._score(
+           ^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_scorer.py", line 350, in _score
+    return self._sign * self._score_func(y_true, y_pred, **scoring_kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\pycaret\internal\metrics.py", line 144, in __call__
+    return self.score_func(y_true, y_pred, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 634, in roc_auc_score
+    return _multiclass_roc_auc_score(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_ranking.py", line 707, in _multiclass_roc_auc_score
+    raise ValueError(
+ValueError: Target scores need to be probabilities for multiclass roc_auc, i.e. they should sum up to 1.0 over classes
+
+  warnings.warn(
+
+2025-12-09 08:57:01,361:INFO:Calculating mean and std
+2025-12-09 08:57:01,362:INFO:Creating metrics dataframe
+2025-12-09 08:57:01,365:INFO:Uploading results into container
+2025-12-09 08:57:01,365:INFO:Uploading model into container now
+2025-12-09 08:57:01,366:INFO:_master_model_container: 11
+2025-12-09 08:57:01,366:INFO:_display_container: 2
+2025-12-09 08:57:01,366:INFO:LinearDiscriminantAnalysis()
+2025-12-09 08:57:01,366:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:01,533:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:57:01,533:INFO:Creating metrics dataframe
+2025-12-09 08:57:01,536:INFO:Initializing Extra Trees Classifier
+2025-12-09 08:57:01,536:INFO:Total runtime is 0.3175642331441243 minutes
+2025-12-09 08:57:01,537:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:57:01,537:INFO:Initializing create_model()
+2025-12-09 08:57:01,537:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=et, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:57:01,537:INFO:Checking exceptions
+2025-12-09 08:57:01,537:INFO:Importing libraries
+2025-12-09 08:57:01,537:INFO:Copying training dataset
+2025-12-09 08:57:01,543:INFO:Defining folds
+2025-12-09 08:57:01,543:INFO:Declaring metric variables
+2025-12-09 08:57:01,543:INFO:Importing untrained model
+2025-12-09 08:57:01,544:INFO:Extra Trees Classifier Imported successfully
+2025-12-09 08:57:01,544:INFO:Starting cross validation
+2025-12-09 08:57:01,546:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:57:01,945:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:02,339:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:02,606:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:02,628:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:02,640:INFO:Calculating mean and std
+2025-12-09 08:57:02,641:INFO:Creating metrics dataframe
+2025-12-09 08:57:02,643:INFO:Uploading results into container
+2025-12-09 08:57:02,644:INFO:Uploading model into container now
+2025-12-09 08:57:02,644:INFO:_master_model_container: 12
+2025-12-09 08:57:02,644:INFO:_display_container: 2
+2025-12-09 08:57:02,645:INFO:ExtraTreesClassifier(n_jobs=-1, random_state=789)
+2025-12-09 08:57:02,645:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:02,811:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:57:02,811:INFO:Creating metrics dataframe
+2025-12-09 08:57:02,814:INFO:Initializing Light Gradient Boosting Machine
+2025-12-09 08:57:02,814:INFO:Total runtime is 0.3388534585634867 minutes
+2025-12-09 08:57:02,815:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:57:02,815:INFO:Initializing create_model()
+2025-12-09 08:57:02,815:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=lightgbm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:57:02,815:INFO:Checking exceptions
+2025-12-09 08:57:02,815:INFO:Importing libraries
+2025-12-09 08:57:02,815:INFO:Copying training dataset
+2025-12-09 08:57:02,822:INFO:Defining folds
+2025-12-09 08:57:02,822:INFO:Declaring metric variables
+2025-12-09 08:57:02,822:INFO:Importing untrained model
+2025-12-09 08:57:02,823:INFO:Light Gradient Boosting Machine Imported successfully
+2025-12-09 08:57:02,823:INFO:Starting cross validation
+2025-12-09 08:57:02,825:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:57:04,057:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,516:INFO:Calculating mean and std
+2025-12-09 08:57:04,518:INFO:Creating metrics dataframe
+2025-12-09 08:57:04,522:INFO:Uploading results into container
+2025-12-09 08:57:04,523:INFO:Uploading model into container now
+2025-12-09 08:57:04,525:INFO:_master_model_container: 13
+2025-12-09 08:57:04,525:INFO:_display_container: 2
+2025-12-09 08:57:04,526:INFO:LGBMClassifier(n_jobs=-1, random_state=789)
+2025-12-09 08:57:04,527:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:04,760:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:57:04,760:INFO:Creating metrics dataframe
+2025-12-09 08:57:04,767:INFO:Initializing Dummy Classifier
+2025-12-09 08:57:04,767:INFO:Total runtime is 0.37139873504638665 minutes
+2025-12-09 08:57:04,767:INFO:SubProcess create_model() called ==================================
+2025-12-09 08:57:04,767:INFO:Initializing create_model()
+2025-12-09 08:57:04,768:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=dummy, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000013079DB6F50>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:57:04,768:INFO:Checking exceptions
+2025-12-09 08:57:04,768:INFO:Importing libraries
+2025-12-09 08:57:04,768:INFO:Copying training dataset
+2025-12-09 08:57:04,781:INFO:Defining folds
+2025-12-09 08:57:04,781:INFO:Declaring metric variables
+2025-12-09 08:57:04,782:INFO:Importing untrained model
+2025-12-09 08:57:04,782:INFO:Dummy Classifier Imported successfully
+2025-12-09 08:57:04,783:INFO:Starting cross validation
+2025-12-09 08:57:04,785:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-12-09 08:57:04,881:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,885:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,886:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,907:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,971:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:04,991:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:05,005:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:05,010:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:05,075:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:05,098:WARNING:E:\Sprint04\venv\Lib\site-packages\sklearn\metrics\_classification.py:1509: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+2025-12-09 08:57:05,118:INFO:Calculating mean and std
+2025-12-09 08:57:05,120:INFO:Creating metrics dataframe
+2025-12-09 08:57:05,123:INFO:Uploading results into container
+2025-12-09 08:57:05,123:INFO:Uploading model into container now
+2025-12-09 08:57:05,124:INFO:_master_model_container: 14
+2025-12-09 08:57:05,124:INFO:_display_container: 2
+2025-12-09 08:57:05,125:INFO:DummyClassifier(random_state=789)
+2025-12-09 08:57:05,125:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:05,300:INFO:SubProcess create_model() end ==================================
+2025-12-09 08:57:05,300:INFO:Creating metrics dataframe
+2025-12-09 08:57:05,307:WARNING:E:\Sprint04\venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py:339: FutureWarning:
+
+Styler.applymap has been deprecated. Use Styler.map instead.
+
+
+2025-12-09 08:57:05,311:INFO:Initializing create_model()
+2025-12-09 08:57:05,311:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000013079CCDFD0>, estimator=RandomForestClassifier(n_jobs=-1, random_state=789), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-12-09 08:57:05,311:INFO:Checking exceptions
+2025-12-09 08:57:05,312:INFO:Importing libraries
+2025-12-09 08:57:05,313:INFO:Copying training dataset
+2025-12-09 08:57:05,328:INFO:Defining folds
+2025-12-09 08:57:05,328:INFO:Declaring metric variables
+2025-12-09 08:57:05,329:INFO:Importing untrained model
+2025-12-09 08:57:05,329:INFO:Declaring custom model
+2025-12-09 08:57:05,331:INFO:Random Forest Classifier Imported successfully
+2025-12-09 08:57:05,333:INFO:Cross validation set to False
+2025-12-09 08:57:05,334:INFO:Fitting Model
+2025-12-09 08:57:05,644:INFO:RandomForestClassifier(n_jobs=-1, random_state=789)
+2025-12-09 08:57:05,645:INFO:create_model() successfully completed......................................
+2025-12-09 08:57:05,914:INFO:_master_model_container: 14
+2025-12-09 08:57:05,915:INFO:_display_container: 2
+2025-12-09 08:57:05,915:INFO:RandomForestClassifier(n_jobs=-1, random_state=789)
+2025-12-09 08:57:05,915:INFO:compare_models() successfully completed......................................
+2025-12-09 09:24:18,234:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+
+
+2025-12-09 09:24:18,236:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: UserWarning:
+
+The palette list has more values (6) than needed (3), which may not be intended.
+
+
+2025-12-09 09:24:24,777:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+
+
+2025-12-09 09:24:24,779:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: UserWarning:
+
+The palette list has more values (6) than needed (3), which may not be intended.
+
+
+2025-12-09 10:11:19,427:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:11:19,450:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:11:19,450:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:11:19,450:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:43:19,890:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:43:19,890:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:43:19,891:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 10:43:19,891:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 14:12:45,281:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 14:12:45,307:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 14:12:45,307:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-09 14:12:45,307:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-11 09:48:44,342:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-11 09:48:44,396:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-11 09:48:44,396:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-11 09:48:44,396:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-13 14:01:58,690:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-13 14:01:58,713:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-13 14:01:58,713:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-13 14:01:58,713:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 11:15:04,448:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 11:15:04,471:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 11:15:04,471:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 11:15:04,471:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 11:37:26,623:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: FutureWarning:
+
+
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+
+
+2025-12-20 11:37:26,625:WARNING:E:\Sprint04\src\pages\random_forest_manual.py:122: UserWarning:
+
+The palette list has more values (6) than needed (3), which may not be intended.
+
+
+2025-12-20 13:13:49,343:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 13:13:49,343:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 13:13:49,343:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-20 13:13:49,343:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
