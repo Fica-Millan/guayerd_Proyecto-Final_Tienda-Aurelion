@@ -1,7 +1,7 @@
 # Proyecto Tienda Aurelion
 
 ## 📝 Descripción
-Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion**, desarrollada en Python utilizando **Streamlit**. La app permite realizar análisis exploratorio de datos (EDA) sobre las ventas, productos y clientes de la tienda, ofreciendo visualizaciones interactivas, EDA automatizado y funcionalidades de Machine Learning (preprocesamiento, AutoML y entrenamiento manual con Random Forest).
+Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion**, desarrollada en Python utilizando **Streamlit**. La app permite realizar análisis exploratorio de datos (EDA) sobre las ventas, productos y clientes de la tienda y cuenta con un **Dashboard Ejecutivo** (réplica interactiva tipo Power BI) que muestra KPIs clave (ventas, ticket promedio, transacciones y clientes), filtros globales y visualizaciones interactivas construidas con **Plotly**, además de opciones para exportar imágenes y datos. Complementa esto con EDA automatizado y funcionalidades de Machine Learning (preprocesamiento, AutoML y entrenamiento manual con Random Forest).
 
 ## 🌟 Características principales
 
@@ -17,6 +17,7 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 - **Preprocesamiento ML**: Interfaz para preparar datos (imputación, codificación, escalado, selección de features y exportación).
 - **AutoML (PyCaret)**: Benchmark automático de modelos y exportación del mejor modelo.
 - **Entrenamiento Manual (Random Forest)**: Entrenamiento, evaluación y exportación de modelos.
+- - **Dashboard Ejecutivo**: Panel interactivo (tipo Power BI) con KPIs clave (ventas, ticket promedio, transacciones y clientes), filtros globales (fechas, ciudades, categorías, medios de pago y rango de ticket), y visualizaciones interactivas.
 - **Documentación**: Acceso a la documentación técnica del proyecto.
 
 ## 📁 Estructura del proyecto
@@ -58,6 +59,7 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 │   │   ├── general_info.py       # Página: información general y vistas previas de datasets
 │   │   ├── ml_preprocessing.py   # Página: interfaz de preprocesamiento para ML
 │   │   ├── random_forest_manual.py # Página: entrenamiento manual y evaluación (Random Forest)
+│   │   ├── dashboard.py          # Página: dashboard ejecutivo con KPIs y visualizaciones interactivas (Plotly)
 │   │   └── statistics.py         # Página: estadísticas descriptivas y gráficos
 │   │
 │   └── utils/                    # Utilidades y helpers reutilizables
@@ -81,20 +83,20 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 2. Crear un entorno virtual (opcional pero recomendado):
 
 ```powershell
-python -m venv venv39
+python -m venv venv
 ```
 
 3. Activar el entorno virtual:
 
 ```powershell
 # PowerShell (Windows)
-.\venv39\Scripts\Activate.ps1
+.\venv\Scripts\Activate.ps1
 
 # CMD (Windows)
-venv39\Scripts\activate.bat
+venv\Scripts\activate.bat
 
 # macOS / Linux
-source venv39/bin/activate
+source venv/bin/activate
 ```
 
 4. Instalar las dependencias:
@@ -134,7 +136,7 @@ Notas:
 
 ## 🛠️ Tecnologías utilizadas
 
-- Python 3.9
+- Python 3.11
 - Streamlit
 - Pandas
 - NumPy
@@ -146,6 +148,7 @@ Notas:
 - scikit-learn (preprocesamiento y modelos)
 - Pillow (PIL) para imágenes
 - joblib / pickle (serialización de modelos)
+- Plotly (dashboard)
 
-Nota: el archivo `requirements.txt` contiene las dependencias pinneadas usadas en el entorno de desarrollo (`venv39`).
+Nota: el archivo `requirements.txt` contiene las dependencias pinneadas usadas en el entorno de desarrollo (`venv`).
    
