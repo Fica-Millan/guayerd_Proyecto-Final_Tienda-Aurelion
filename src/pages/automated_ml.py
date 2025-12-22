@@ -2,9 +2,34 @@
 
 import streamlit as st
 import pandas as pd
-from pycaret.classification import *
+from pycaret.classification import (
+    setup,
+    compare_models,
+    pull,
+    get_config
+)
 import os
 import pickle 
+
+@st.cache_resource(show_spinner=False)
+def run_automl(df, target, normalize, remove_multicollinearity):
+    setup(
+        data=df,
+        target=target,
+        session_id=789,
+        normalize=normalize,
+        remove_multicollinearity=remove_multicollinearity,
+        verbose=False
+    )
+
+    best_model = compare_models(
+        sort="AUC",
+        fold=3          # 🔴 MUY IMPORTANTE para Cloud
+    )
+
+    results = pull()
+    return best_model, results
+
 
 def show_automated_ml():
     """
@@ -133,22 +158,24 @@ def show_automated_ml():
 
     if st.button("Comparar todos los modelos"):
         with st.spinner("Entrenando y comparando modelos..."):
-            best_model = compare_models(sort="AUC")
+            best_model, results = run_automl(
+                df,
+                target,
+                normalize,
+                remove_multicollinearity
+            )
 
         st.success("Comparación completada.")
-        
-        # Mostrar tabla de métricas
-        results = pull()
+
         st.write("### 📊 Métricas de los modelos comparados")
         st.dataframe(results)
 
         st.write("### 🏆 Mejor modelo encontrado:")
         st.write(best_model)
-               
-        # Guardar en session_state para uso posterior
+
         st.session_state["best_model"] = best_model
-        st.session_state.modelo_comparado = True    # ✅ ACTIVAR ESTADO
-        st.session_state.modelo_descargado = False  # ✅ RESETEAR DESCARGAS
+        st.session_state.modelo_comparado = True
+        st.session_state.modelo_descargado = False
 
 
     # ===============================================================

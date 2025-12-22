@@ -4932,3 +4932,11 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 The palette list has more values (6) than needed (3), which may not be intended.
 
 
+2025-12-22 12:11:57,046:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-22 12:11:57,046:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-22 12:11:57,046:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-12-22 12:11:57,046:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
