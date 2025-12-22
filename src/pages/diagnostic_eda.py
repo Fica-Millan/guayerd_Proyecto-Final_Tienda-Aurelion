@@ -179,7 +179,7 @@ def show_diagnostic_eda():
         # ✅ Interpretación conjunta
         tabla_interpretacion = cargar_interpretacion(
             INTERPRETACIONES_PATH,
-            "🔸 Gráfica: distribucion_numericas"
+            "distribucion_numericas"
         )
 
         st.markdown("### 📝 Interpretación Conjunta de Variables Numéricas")
@@ -215,7 +215,7 @@ def show_diagnostic_eda():
             mostrar_fig(fig, save=True, ancho=500)
             
             # Cargar e insertar interpretación desde documentación
-            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "🔸 Gráfica: correlacion")
+            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "correlacion")
             st.markdown(f"#### 📝 Interpretación\n{interpretacion}")
 
     # ==============================================================
@@ -307,7 +307,7 @@ def show_diagnostic_eda():
             mostrar_fig(fig, save=True, ancho=700) 
             
             # Cargar e insertar interpretación desde documentación
-            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "🔸 Gráfica: ventas_total_por_mes")
+            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "ventas_total_por_mes")
             st.markdown(f"#### 📝 Interpretación\n{interpretacion}")
                 
 
@@ -342,7 +342,7 @@ def show_diagnostic_eda():
             mostrar_fig(fig, save=True, ancho=700)
             
             # Cargar e insertar interpretación desde documentación
-            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "🔸 Gráfica: relacion_cantidad")
+            interpretacion = cargar_interpretacion(INTERPRETACIONES_PATH, "relacion_cantidad")
             st.markdown(f"#### 📝 Interpretación\n{interpretacion}")
             
 
@@ -408,7 +408,7 @@ def show_diagnostic_eda():
         # ----- INTERPRETACIÓN COMBINADA -----
         interpretacion = cargar_interpretacion(
             INTERPRETACIONES_PATH,
-            "🔸 Gráfica: outliers"
+            "outliers"
         )
 
         st.markdown("### 📝 Interpretación de Outliers")

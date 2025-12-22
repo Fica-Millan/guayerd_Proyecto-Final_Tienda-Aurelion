@@ -72,12 +72,17 @@ elif opcion == "Ver documentación":
 # --- FOOTER ---
 st.markdown("---")
 st.markdown(
-    """
+    """  
     <div style='text-align: center; font-size: 15px; color: gray;'>
-        <p><b>Sprint 04 – Fundamentos de Inteligencia Artificial</b><br>
-        Programa Guayerd e IBM</p>
-        <p>Desarrollado por <b>Yesica Fica Millán</b> – <a href="https://www.linkedin.com/in/yesica-fica-millan" target="_blank">LinkedIn</a></p>
-        <p style='font-size:13px;'>© 2025 Proyecto Tienda Aurelion</p>
+    <p><b>Fundamentos de Inteligencia Artificial</b> - Programa Guayerd e IBM</p>
+    <p>Desarrollado por <b>Yesica Fica Millán</b> – 
+        <a href="https://www.linkedin.com/in/yesica-fica-millan" target="_blank">LinkedIn</a>
+    </p>
+    <p>
+        Repositorio del proyecto:
+        <a href="https://github.com/Fica-Millan/guayerd_Proyecto-Final_Tienda-Aurelion" target="_blank">GitHub</a>
+    </p>
+    <p style='font-size:13px;'>© 2025 Proyecto Tienda Aurelion</p>
     </div>
     """,
     unsafe_allow_html=True

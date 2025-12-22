@@ -1,9 +1,21 @@
+<p align="center">
+  <img src="assets/logo_aurelion.png" width="60%" />
+</p>
+
+<div align="center">
+
+   ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+   ![Status](https://img.shields.io/badge/Status-Terminado-green)
+   ![Author](https://img.shields.io/badge/Autor-Yesica%20Fica%20Mill%C3%A1n-purple)
+
+</div>
+
 # Proyecto Tienda Aurelion
 
-## 📝 Descripción
+## 🟧 Descripción
 Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion**, desarrollada en Python utilizando **Streamlit**. La app permite realizar análisis exploratorio de datos (EDA) sobre las ventas, productos y clientes de la tienda y cuenta con un **Dashboard Ejecutivo** (réplica interactiva tipo Power BI) que muestra KPIs clave (ventas, ticket promedio, transacciones y clientes), filtros globales y visualizaciones interactivas construidas con **Plotly**, además de opciones para exportar imágenes y datos. Complementa esto con EDA automatizado y funcionalidades de Machine Learning (preprocesamiento, AutoML y entrenamiento manual con Random Forest).
 
-## 🌟 Características principales
+## 🟧 Características principales
 
 - **Información General**: Vista previa y detalles de cada dataset.
 - **Estadísticas**: Análisis descriptivo con visualizaciones personalizadas.
@@ -20,7 +32,7 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 - - **Dashboard Ejecutivo**: Panel interactivo (tipo Power BI) con KPIs clave (ventas, ticket promedio, transacciones y clientes), filtros globales (fechas, ciudades, categorías, medios de pago y rango de ticket), y visualizaciones interactivas.
 - **Documentación**: Acceso a la documentación técnica del proyecto.
 
-## 📁 Estructura del proyecto
+## 🟧 Estructura del proyecto
 
 ```
 ├── main.py                       # Entrada de la app Streamlit y routing de páginas
@@ -76,7 +88,7 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 └── requirements.txt              # Dependencias del proyecto
 ```
 
-## ⚙️ Preparación del entorno
+## 🟧 Preparación del entorno
 
 1. Clonar o descargar el repositorio.
 
@@ -105,7 +117,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 🚀 Ejecución de la aplicación
+## 🟧 Ejecución de la aplicación
 
 Con el entorno virtual activo, ejecutar:
 
@@ -115,7 +127,7 @@ streamlit run main.py
 
 La aplicación se abrirá en el navegador (por defecto http://localhost:8501). Si tu archivo principal tiene otro nombre, reemplázalo en el comando anterior.
 
-## 📊 Datasets
+## 🟧 Datasets
 
 La aplicación trabaja con los siguientes datasets:
 
@@ -134,7 +146,7 @@ Notas:
 - Si `df_tienda_aurelion.csv` no existe en la primera ejecución, la aplicación lo creará al ejecutar la opción de carga/unificación.
 - `dataset_ml_productos.csv` es el archivo utilizado por las páginas de AutoML y Entrenamiento Manual; si no existe, ejecutar la sección de Preprocesamiento ML para generarlo.
 
-## 🛠️ Tecnologías utilizadas
+## 🟧 Tecnologías utilizadas
 
 - Python 3.11
 - Streamlit
