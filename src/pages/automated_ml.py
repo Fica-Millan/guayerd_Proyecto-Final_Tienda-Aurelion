@@ -21,11 +21,13 @@ def run_automl(df, target, normalize, remove_multicollinearity):
         remove_multicollinearity=remove_multicollinearity,
         verbose=False
     )
-
+  
     best_model = compare_models(
+        include=["lr", "rf", "gbc", "lightgbm", "knn"],  
         sort="AUC",
-        fold=3          # 🔴 MUY IMPORTANTE para Cloud
+        fold=3
     )
+
 
     results = pull()
     return best_model, results
