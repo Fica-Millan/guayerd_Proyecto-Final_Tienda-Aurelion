@@ -55,11 +55,14 @@ def show_automated_ml():
     que permite ejecutar de forma rápida un benchmarking automático de modelos 
     de clasificación para facilitar la selección del modelo a desarrollar manualmente.
     """
-
-    st.subheader("AutoML: Benchmarking de Modelos")
+    
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>AutoML: Benchmarking de Modelos</h3>",
+        unsafe_allow_html=True
+    )
     st.markdown(
         '<p style="font-size: 22px;">En esta sección se comparan modelos de clasificación utilizando '
-        '<span style="color: orange; font-weight:600;">PyCaret.</span></p>',
+        '<span style="color: #5dade2; font-weight:600;">PyCaret.</span></p>',
         unsafe_allow_html=True
     )
 

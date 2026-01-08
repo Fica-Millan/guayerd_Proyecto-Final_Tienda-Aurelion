@@ -28,7 +28,10 @@ def show_statistics():
     - La función no recibe parámetros y no devuelve ningún valor.
     """
     
-    st.subheader("📊 Estadísticas descriptivas de cada dataset")
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>Estadísticas descriptivas de cada dataset</h3>",
+        unsafe_allow_html=True
+    )
        
     # --- Elegir dataset ---
     # Obtiene la lista de datasets disponibles y elimina el dataset unificado
@@ -188,3 +191,5 @@ def show_statistics():
     else:
         # Mensaje de error si no se pudo cargar el dataset
         st.warning("No se pudo cargar el dataset seleccionado.")
+        
+        

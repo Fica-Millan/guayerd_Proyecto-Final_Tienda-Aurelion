@@ -4,10 +4,10 @@ import streamlit as st
 from ydata_profiling import ProfileReport
 from src.data_loader import load_and_merge_datasets
 
-def show_automated_eda():
+def show_automated_eda():       
     st.markdown(
-    '<h3>📊 EDA Automatizado con librería <span style="color: orange;">ydata</span>',
-    unsafe_allow_html=True
+        "<h3 style='color:#f1c40f;'>EDA Automatizado con librería <span style='color:#5dade2;'>ydata</span></h3>",
+        unsafe_allow_html=True
     )
     
     df = load_and_merge_datasets()

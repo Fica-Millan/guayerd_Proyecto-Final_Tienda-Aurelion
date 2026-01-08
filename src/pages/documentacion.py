@@ -5,7 +5,10 @@ from src.utils.eda_sections import mostrar_seccion_md, mostrar_graficos
 
 
 def mostrar_documentacion():
-    st.subheader("📘 Documentación del proyecto")
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>Documentación del proyecto</h3>",
+        unsafe_allow_html=True
+    )
 
     # Ruta al proyecto raíz y al archivo de documentación
     ruta_md = Path(__file__).resolve().parents[2] / "docs" / "documentacion_tienda_aurelion.md"
@@ -15,7 +18,10 @@ def mostrar_documentacion():
         contenido_md = ruta_md.read_text(encoding="utf-8")
 
         # 🟡 --- Contexto y objetivo ---
-        st.markdown("### Contexto y objetivo")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Contexto y objetivo</h4>",
+            unsafe_allow_html=True
+        )
                  
         # ◽ Tema
         with st.expander("🔸 Tema"):
@@ -36,7 +42,10 @@ def mostrar_documentacion():
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)             
             
         # 🟡 --- Datasets de referencia ---
-        st.markdown("### Datasets de referencia")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Datasets de referencia</h4>",
+            unsafe_allow_html=True
+        )
             
         # ◽ Tema
         with st.expander("🔸 Fuente"):
@@ -58,7 +67,10 @@ def mostrar_documentacion():
                         
 
         # 🟡 --- Metodología ---
-        st.markdown("### Metodología e implementación")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Metodología e implementación</h4>",
+            unsafe_allow_html=True
+        )
             
         # ◽ Información
         with st.expander("🔸 Información de la aplicación"):
@@ -73,14 +85,21 @@ def mostrar_documentacion():
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
 
         # 🟡 --- Pseudocódigo ---
-        st.markdown("### Pseudocódigo")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Pseudocódigo</h4>",
+            unsafe_allow_html=True
+        )
+        
         with st.expander("🔸 Ver Pseudocódigo"):
             inicio = contenido_md.find("### Pseudocódigo") + len("### Pseudocódigo")
             fin = contenido_md.find("### Diagrama del flujo")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
 
         # 🟡 --- Diagrama del flujo ---
-        st.markdown("### Diagrama del flujo")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Diagrama del flujo</h4>",
+            unsafe_allow_html=True
+        )
 
         with st.expander("🔸 Ver Diagrama"):
             mostrar_graficos([
@@ -89,7 +108,10 @@ def mostrar_documentacion():
 
                 
         # 🟡 --- Interpretaciones EDA – Visualizaciones ---
-        st.markdown("### Interpretaciones EDA – Visualizaciones")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Interpretaciones EDA – Visualizaciones</h4>",
+            unsafe_allow_html=True
+        )
 
         # ◽ Distribución de variables
         with st.expander("🔸 Gráfica: Distribuciones de Variables numéricas"):
@@ -151,7 +173,10 @@ def mostrar_documentacion():
                     
                     
         # 🟡 --- Modelado de Machine Learning ---
-        st.markdown("### Modelado de Machine Learning")
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Modelado de Machine Learning</h4>",
+            unsafe_allow_html=True
+        )
 
         # ◽ Preprocesamiento
         with st.expander("🔸 Preprocesamiento"):

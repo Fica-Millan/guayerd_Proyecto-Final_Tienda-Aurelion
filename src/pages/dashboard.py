@@ -1,8 +1,6 @@
 """
 Dashboard Ejecutivo - Tienda Aurelion (VERSIÓN INTERACTIVA MEJORADA)
 Réplica mejorada del dashboard de Power BI en Streamlit
-Autor: Claude AI
-Versión: 2.0 - Full Interactive
 """
 
 import streamlit as st
@@ -48,6 +46,7 @@ def cargar_datos():
 # ================================
 
 def aplicar_filtros_globales(df):
+    
     """
     Aplica filtros globales desde el sidebar
     """
@@ -159,7 +158,7 @@ def aplicar_filtros_globales(df):
     
     # 3. Filtro de categorías
     st.sidebar.subheader("🔹 Categorías")
-    categorias_disponibles = sorted(df['categoria'].unique().tolist())
+    categorias_disponibles = sorted(df['categoria_corregida'].unique().tolist())
     categorias_seleccionadas = st.sidebar.multiselect(
         "Seleccionar categorías",
         options=categorias_disponibles,
@@ -168,7 +167,7 @@ def aplicar_filtros_globales(df):
     )
     
     if categorias_seleccionadas:
-        df_filtrado = df_filtrado[df_filtrado['categoria'].isin(categorias_seleccionadas)]
+        df_filtrado = df_filtrado[df_filtrado['categoria_corregida'].isin(categorias_seleccionadas)]
     
     # 4. Filtro de medios de pago
     st.sidebar.subheader("🔹 Medios de Pago")
@@ -217,12 +216,12 @@ def aplicar_filtros_globales(df):
     # Mostrar resumen de filtros aplicados
     st.sidebar.markdown("---")
     st.sidebar.subheader("📊 Resumen de Filtros")
-    st.sidebar.info(f"""
-    **Registros:** {len(df_filtrado):,} de {len(df):,}
-    **Ciudades:** {len(ciudades_seleccionadas)}
-    **Categorías:** {len(categorias_seleccionadas)}
-    **Medios de pago:** {len(medios_seleccionados)}
-    """)
+    st.sidebar.info(
+        f"**Registros:** {len(df_filtrado):,} de {len(df):,}  \n"
+        f"**Ciudades:** {len(ciudades_seleccionadas)}  \n"
+        f"**Categorías:** {len(categorias_seleccionadas)}  \n"
+        f"**Medios de pago:** {len(medios_seleccionados)}"
+    )
     
     return df_filtrado
 
@@ -425,8 +424,8 @@ def crear_grafico_tendencia_ventas(df):
         showlegend=True,
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=-0.25,
+            yanchor="top",
+            y=-0.20,
             xanchor="center",
             x=0.5
         ),
@@ -445,9 +444,13 @@ def crear_grafico_ventas_categoria(df):
     Crea el gráfico de ventas por categoría (barras horizontales) - INTERACTIVO
     """
     if len(df) == 0:
-        return go.Figure()
-    
-    ventas_categoria = df.groupby('categoria')['total_venta'].sum().sort_values(ascending=True)
+            return go.Figure()
+        
+    ventas_categoria = (
+        df.groupby('categoria_corregida')['total_venta']
+        .sum()
+        .sort_values(ascending=True)
+    )
     
     fig = go.Figure(go.Bar(
         x=ventas_categoria.values,
@@ -464,7 +467,7 @@ def crear_grafico_ventas_categoria(df):
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
         font=dict(family="Arial", size=12, color='white'),
-        margin=dict(l=150, r=20, t=40, b=20),
+        margin=dict(l=180, r=20, t=40, b=20),
         xaxis=dict(showgrid=True, gridcolor='#333'),
         yaxis=dict(showgrid=False)
     )
@@ -675,14 +678,16 @@ def crear_grafico_ventas_producto_mes(df):
 
     fig.update_layout(
         xaxis_title='',
-        yaxis_title='Ventas Promedio por Producto',
-        height=350,
+        yaxis_title='Ventas Promedio',
+        height=360,
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
         font=dict(color='white', family="Arial", size=12),
         xaxis=dict(showgrid=False),
         yaxis=dict(showgrid=True, gridcolor='#333')
     )
+
+    fig.update_yaxes(title_standoff=10)
 
     return fig
 
@@ -717,8 +722,11 @@ def crear_tabla_alertas_stock_interactiva(df):
             "Unidades": cantidad,
             "Alerta Stock": alerta
         })
-
-    alertas_df = pd.DataFrame(alertas).head(10)
+  
+    alertas_df = (
+        pd.DataFrame(alertas)
+        .sort_values(by="Producto", ascending=True)
+    )
 
     st.dataframe(
         alertas_df,
@@ -727,11 +735,12 @@ def crear_tabla_alertas_stock_interactiva(df):
         column_config={
             "Producto": st.column_config.TextColumn(
                 "Producto",
-                width="medium",
+                width="small",
             ),
             "Unidades": st.column_config.NumberColumn(
                 "Unidades",
                 format="%d",
+                width="small",
             ),
             "Alerta Stock": st.column_config.TextColumn(
                 "Alerta Stock",
@@ -753,8 +762,8 @@ def crear_gauge_concentracion(concentracion):
         value=valor_decimal,
         domain={'x': [0, 1], 'y': [0, 1]},
         number={
-            'font': {'size': 50, 'color': '#2C5F6F'},
-            'valueformat': '.2f'  # Formato decimal con 2 decimales
+            'font': {'size': 42, 'color': "#69CBE9"},
+            'valueformat': '.2f'  
         },
         gauge={
             'axis': {
@@ -766,11 +775,11 @@ def crear_gauge_concentracion(concentracion):
                 'dtick': 0.2,
                 'tickformat': '.2f'
             },
-            'bar': {'color': "#2C5F6F", 'thickness': 0.3},  
+            'bar': {'color': "#69CBE9", 'thickness': 0.3},  
             'bgcolor': "#E8F4F8",  
             'borderwidth': 0,
             'steps': [
-                {'range': [0, 1], 'color': "#CCECE6"}  
+                {'range': [0, 1], 'color': "#E8F4F8"}  
             ],
             'threshold': {
                 'line': {'color': "#D4A5A5", 'width': 8},  
@@ -779,19 +788,21 @@ def crear_gauge_concentracion(concentracion):
             }
         }
     ))
-    
+        
     fig.update_layout(
-        height=250,
-        margin=dict(l=20, r=20, t=60, b=20),
-        paper_bgcolor='#faf5f5',  
-        font=dict(family="Arial", color='#2C5F6F', size=12),
+        height=230,
+        margin=dict(l=40, r=40, t=60, b=30),
+        paper_bgcolor='rgba(0,0,0,0)',  
+        font=dict(family="Arial", color='#69CBE9', size=12),
         title={
-            'text': "KPI Concentración Valor y KPI Concentración Meta",
-            'font': {'size': 14, 'color': '#2C5F6F', 'family': 'Arial'},
+            'text': "KPI Concentración Top 10",
+            'font': {'size': 13, 'color': '#69CBE9', 'family': 'Arial'},
             'x': 0.5,
             'xanchor': 'center'
         }
     )
+    
+    st.caption("Límite recomendado: ≤ 0.40")
     
     return fig
 
@@ -1132,7 +1143,7 @@ def pagina_analisis_productos(df):
     st.markdown("<br>", unsafe_allow_html=True)
     
     # Gráficos principales
-    col_izq, col_centro, col_der = st.columns([2, 1.5, 1.5])
+    col_izq, col_centro, col_der = st.columns([2, 2, 2])
     
     with col_izq:
         st.markdown("### Ventas promedio por producto por mes")

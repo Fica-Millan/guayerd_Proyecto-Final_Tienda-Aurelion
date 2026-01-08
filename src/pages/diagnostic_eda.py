@@ -14,9 +14,11 @@ from src.utils.palette import PALETA
 
 INTERPRETACIONES_PATH = "docs/documentacion_tienda_aurelion.md"
 
-def show_diagnostic_eda():
-
-    st.subheader("📊 EDA Diagnóstico - Tienda Aurelion")
+def show_diagnostic_eda():      
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>EDA Diagnóstico del negocio</h3>",
+        unsafe_allow_html=True
+    )
 
     # ==============================================================
     # 1️⃣ Carga del dataset

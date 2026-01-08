@@ -20,8 +20,10 @@ def show_ml_preprocessing():
 
     No retorna valores; muestra los resultados directamente en la interfaz.
     """
-
-    st.subheader("Preprocesamiento para Machine Learning")
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>Preprocesamiento para Machine Learning</h3>",
+        unsafe_allow_html=True
+    )
     st.write("Esta sección prepara el dataset para entrenar modelos de clasificación de demanda.")
 
     st.markdown("---")  
@@ -70,8 +72,7 @@ def show_ml_preprocessing():
         st.write("**Valores nulos por columna:**")
         nulos_por_columna = df.isnull().sum()
         st.write(nulos_por_columna[nulos_por_columna > 0])
-        
-        
+           
 
     with st.expander("🔸 Detalle por columna"):
         info = pd.DataFrame({
@@ -105,15 +106,9 @@ def show_ml_preprocessing():
         .reset_index()
     )
 
-
-
-
     # 🚀 FEATURE ENGINEERING - HACERLO AQUÍ ANTES DE LAS TRANSFORMACIONES
     df_prod['ventas_por_transaccion'] = df_prod['total_ventas'] / df_prod['cant_transacciones']
     df_prod['unidades_por_transaccion'] = df_prod['total_unidades'] / df_prod['cant_transacciones']
-
-
-
 
     st.markdown("#### 🔸 Vista previa del dataset agrupado")
     st.dataframe(df_prod.head(20))
@@ -145,9 +140,10 @@ def show_ml_preprocessing():
 
     st.info(f"""
     Segmentación actual (percentiles):
-    - Baja: ≤ {q1:.2f} unidades
-    - Media: {q1:.2f} < x ≤ {q2:.2f} unidades  
     - Alta: > {q2:.2f} unidades
+    - Media: {q1:.2f} < x ≤ {q2:.2f} unidades  
+    - Baja: ≤ {q1:.2f} unidades
+
     """)
 
     def clasificar_demanda(x):
@@ -161,7 +157,14 @@ def show_ml_preprocessing():
     df_prod["nivel_demanda"] = df_prod["total_unidades"].apply(clasificar_demanda)
 
     # Diagnóstico rápido
-    conteos = df_prod["nivel_demanda"].value_counts()
+    orden = ["alta", "media", "baja"]
+
+    conteos = (
+        df_prod["nivel_demanda"]
+        .value_counts()
+        .reindex(orden)
+    )
+
     proporciones = (conteos / conteos.sum() * 100).round(2)
 
     col1, col2 = st.columns(2)
@@ -235,9 +238,9 @@ def show_ml_preprocessing():
 
     st.info("""
     La variable **nivel_demanda** se convirtió en:
-    - baja → 0  
-    - media → 1  
     - alta → 2  
+    - media → 1  
+    - baja → 0  
     """)
 
     # Eliminación de columnas

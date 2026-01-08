@@ -23,7 +23,11 @@ def show_general_info():
     - La función no recibe parámetros y no devuelve ningún valor.
     """
     
-    st.subheader("📄 Información general de cada dataset")
+    st.markdown(
+        "<h3 style='color:#f1c40f;'> Información general de cada dataset</h3>",
+        unsafe_allow_html=True
+    )
+
     dataset_paths = get_dataset_paths()
     
     datasets_visibles = {k: v for k, v in dataset_paths.items() if k != "df_tienda_aurelion"}

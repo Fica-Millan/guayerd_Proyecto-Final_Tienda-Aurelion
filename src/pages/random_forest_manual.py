@@ -30,10 +30,13 @@ from src.utils.palette import PALETA
 # ===============================================================
 def show_random_forest_manual():
 
-    st.subheader("Entrenamiento Manual")
+    st.markdown(
+        "<h3 style='color:#f1c40f;'>Entrenamiento Manual</h3>",
+        unsafe_allow_html=True
+    )
     st.markdown(
         '<p style="font-size: 22px;">Entrená manualmente un modelo '
-        '<span style="color: orange; font-weight:600;">Random Forest</span> ajustando los parámetros.</p>',
+        '<span style="color: #5dade2; font-weight:600;">Random Forest</span> ajustando los parámetros.</p>',
         unsafe_allow_html=True
     )
 
