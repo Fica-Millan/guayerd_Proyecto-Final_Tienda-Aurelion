@@ -1,5 +1,16 @@
 # src/utils/palette.py
 
+"""
+palette.py
+----------
+
+Definición de la paleta de colores corporativa de la aplicación.
+
+Este módulo centraliza los colores utilizados en visualizaciones
+(gráficos de barras, líneas y tortas) para garantizar consistencia
+visual y facilitar cambios globales de estilo.
+"""
+
 # --- Paleta de colores global para la app ---
 PALETA = {
     "principal": "#05E8CC",     

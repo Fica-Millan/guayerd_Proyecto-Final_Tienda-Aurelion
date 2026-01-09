@@ -25,10 +25,78 @@ from src.utils.figures import mostrar_fig, save_fig_to_disk
 from src.utils.palette import PALETA
 
 
-# ===============================================================
-# ENTRENAMIENTO MANUAL RANDOM FOREST
-# ===============================================================
 def show_random_forest_manual():
+    """
+    Interfaz de Streamlit para el entrenamiento, evaluación y análisis manual
+    de un modelo de clasificación Random Forest aplicado a la predicción del
+    nivel de demanda de productos.
+
+    Objetivo:
+    Permitir al usuario entrenar un modelo Random Forest de forma controlada,
+    ajustando hiperparámetros clave y analizando en detalle su performance,
+    interpretabilidad y capacidad de generalización, como complemento al
+    enfoque AutoML.
+
+    Flujo de la función:
+    1. Carga del dataset procesado:
+       - Lee el archivo `data/dataset_ml_productos.csv` generado en la etapa
+         de preprocesamiento.
+       - Muestra un preview del dataset y valida su existencia.
+    2. Definición de la variable objetivo:
+       - Target fijo: `nivel_demanda` (clasificación multiclase: 0=baja,
+         1=media, 2=alta).
+       - Selección automática de variables predictoras excluyendo columnas
+         agregadas y de fuga de información.
+    3. Configuración del modelo:
+       - Ajuste interactivo de hiperparámetros principales del Random Forest
+         (cantidad de árboles, profundidad máxima).
+       - Configuración de balanceo de clases, tamaño del conjunto de test y
+         semilla para reproducibilidad.
+    4. Validaciones del dataset:
+       - Verificación de valores faltantes.
+       - Análisis de la distribución de clases del target con tablas y gráficos.
+       - Advertencias automáticas para datasets pequeños.
+    5. Entrenamiento del modelo:
+       - Separación estratificada en conjuntos de entrenamiento y test.
+       - Entrenamiento del Random Forest con hiperparámetros seleccionados y
+         criterios para evitar overfitting.
+    6. Validación cruzada:
+       - Evaluación mediante cross-validation con número de folds ajustado
+         dinámicamente al tamaño del dataset.
+       - Cálculo de métricas Accuracy y F1 Weighted por fold y promedios.
+    7. Evaluación sobre el conjunto de test:
+       - Métricas globales: Accuracy, Precision, Recall y F1 Score ponderado.
+       - Curvas ROC multiclase (One-vs-Rest) y cálculo de AUC macro.
+       - Matriz de confusión con visualización tipo heatmap.
+    8. Interpretabilidad del modelo:
+       - Análisis de importancia de variables mediante feature_importances_.
+       - Visualización tabular y gráfica de las variables más relevantes.
+    9. Análisis por clase:
+       - Classification Report con métricas por clase.
+       - Diagnóstico automático de fortalezas y debilidades según F1-Score.
+       - Heatmap comparativo de Precision, Recall y F1 por clase.
+    10. Curva de aprendizaje:
+        - Evaluación de underfitting / overfitting mediante learning curves.
+        - Diagnóstico automático de capacidad de generalización del modelo.
+    11. Persistencia del modelo:
+        - Descarga manual del modelo entrenado en formato `.pkl`.
+        - Guardado automático del modelo en la carpeta `/models`.
+
+    Resultados:
+    - Entrena un modelo Random Forest completamente evaluado e interpretable.
+    - Proporciona un análisis exhaustivo de performance, estabilidad y
+      generalización.
+    - Genera artefactos visuales y persiste el modelo para su uso posterior.
+
+    Retorno:
+    Esta función no retorna valores; presenta resultados, métricas y gráficos
+    directamente en la interfaz de Streamlit y guarda el modelo entrenado en disco.
+
+    Uso:
+    Se integra como la etapa de modelado manual dentro del dashboard analítico,
+    permitiendo comparar los resultados con modelos generados mediante AutoML
+    (PyCaret) y profundizar el entendimiento del algoritmo.
+    """
 
     st.markdown(
         "<h3 style='color:#f1c40f;'>Entrenamiento Manual</h3>",

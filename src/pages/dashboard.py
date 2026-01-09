@@ -1,7 +1,4 @@
-"""
-Dashboard Ejecutivo - Tienda Aurelion (VERSIÓN INTERACTIVA MEJORADA)
-Réplica mejorada del dashboard de Power BI en Streamlit
-"""
+# src/pages/dashboard.py
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -362,7 +359,7 @@ def mostrar_kpi_card(titulo, valor, porcentaje=None, prefijo="", sufijo=""):
 
 def crear_grafico_tendencia_ventas(df):
     """
-    Crea el gráfico de tendencia de ventas (barras + línea) - INTERACTIVO
+    Crea el gráfico de tendencia de ventas (barras + línea)
     """
     if len(df) == 0:
         return go.Figure()
@@ -441,7 +438,7 @@ def crear_grafico_tendencia_ventas(df):
 
 def crear_grafico_ventas_categoria(df):
     """
-    Crea el gráfico de ventas por categoría (barras horizontales) - INTERACTIVO
+    Crea el gráfico de ventas por categoría (barras horizontales)
     """
     if len(df) == 0:
             return go.Figure()
@@ -519,7 +516,7 @@ def crear_tabla_top_productos_interactiva(df, top_n=10):
 
 def crear_grafico_ventas_ciudad(df):
     """
-    Crea el gráfico de barras de ventas por ciudad - INTERACTIVO
+    Crea el gráfico de barras de ventas por ciudad 
     """
     if len(df) == 0:
         return go.Figure()
@@ -549,7 +546,7 @@ def crear_grafico_ventas_ciudad(df):
 
 def crear_grafico_medio_pago(df):
     """
-    Crea el gráfico donut de medios de pago - INTERACTIVO
+    Crea el gráfico donut de medios de pago 
     """
     if len(df) == 0:
         return go.Figure()
@@ -637,7 +634,7 @@ def crear_tabla_clientes_ciudad_interactiva(df):
 
 def crear_grafico_ventas_producto_mes(df):
     """
-    Crea gráfico de línea de ventas promedio por producto por mes - INTERACTIVO
+    Crea gráfico de línea de ventas promedio por producto por mes
     """
     if len(df) == 0:
         return go.Figure()
@@ -808,7 +805,7 @@ def crear_gauge_concentracion(concentracion):
 
 def crear_grafico_productos_mas_vendidos(df, top_n=10):
     """
-    Crea gráfico de barras horizontales de productos más vendidos - INTERACTIVO
+    Crea gráfico de barras horizontales de productos más vendidos
     """
     if len(df) == 0:
         return go.Figure()
@@ -961,7 +958,7 @@ def buscar_productos(df):
 
 def pagina_analisis_ventas(df):
     """
-    Página 1: Análisis de Ventas - VERSIÓN INTERACTIVA
+    Página 1: Análisis de Ventas
     """
     st.markdown("## ANÁLISIS DE VENTAS")
     
@@ -1008,7 +1005,7 @@ def pagina_analisis_ventas(df):
     st.markdown("<br>", unsafe_allow_html=True)
     
     # Gráficos principales
-    col_izq, col_centro, col_der = st.columns([2, 2, 2])
+    col_izq, col_centro, col_der = st.columns([2, 2, 3])
     
     with col_izq:
         st.markdown("### Tendencia de Ventas")
@@ -1036,7 +1033,7 @@ def pagina_analisis_ventas(df):
 
 def pagina_analisis_clientes(df):
     """
-    Página 2: Análisis de Clientes - VERSIÓN INTERACTIVA
+    Página 2: Análisis de Clientes
     """
     st.markdown("## ANÁLISIS DE CLIENTES")
     
@@ -1091,7 +1088,7 @@ def pagina_analisis_clientes(df):
 
 def pagina_analisis_productos(df):
     """
-    Página 3: Análisis de Productos - VERSIÓN INTERACTIVA
+    Página 3: Análisis de Productos
     """
     st.markdown("## ANÁLISIS DE PRODUCTOS")
     

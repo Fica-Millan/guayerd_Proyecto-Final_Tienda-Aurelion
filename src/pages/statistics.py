@@ -9,23 +9,55 @@ from src.utils.palette import PALETA, COLORES_BARRAS, COLORES_PIE
 
 def show_statistics():
     """
-    Muestra estadísticas descriptivas y visualizaciones interactivas
-    de un dataset seleccionado por el usuario en Streamlit.
+    Interfaz de Streamlit para la exploración estadística descriptiva y
+    visualización interactiva de los datasets del proyecto Tienda Aurelion.
+
+    Objetivo:
+    Facilitar una comprensión inicial y comparativa de los distintos datasets
+    disponibles (clientes, productos, ventas y detalle de ventas), mediante
+    estadísticas descriptivas y gráficos exploratorios que permitan detectar
+    patrones, distribuciones, relaciones entre variables y posibles problemas
+    de calidad de datos.
 
     Flujo principal:
-    1. Filtra los datasets disponibles para excluir el unificado.
-    2. Permite al usuario seleccionar un dataset.
-    3. Si el dataset se carga correctamente:
-        - Muestra información general, valores nulos y únicos.
-        - Muestra resumen estadístico.
-        - Si es "Detalle Ventas", genera un mapa de correlación.
-        - Genera visualizaciones específicas según el tipo de dataset.
-    4. Si el dataset no se puede cargar, muestra advertencia en pantalla.
+    1. Obtención y filtrado de datasets:
+       - Recupera los datasets disponibles desde la capa de carga de datos.
+       - Excluye el dataset unificado para evitar redundancia en el análisis.
+    2. Selección interactiva del dataset:
+       - Permite al usuario elegir el dataset a analizar desde un selector.
+    3. Exploración general del dataset:
+       - Muestra información estructural (filas, columnas y tipos de datos).
+       - Analiza valores faltantes y cantidad de valores únicos por columna.
+       - Presenta un resumen estadístico completo (numéricas y categóricas).
+    4. Análisis de correlación:
+       - Para el dataset "Detalle Ventas", genera un mapa de correlación entre
+         variables numéricas cuando es estadísticamente relevante.
+    5. Visualizaciones específicas por dominio:
+       - Clientes: distribución por ciudad y evolución temporal de registros.
+       - Productos: distribución de precios y composición por categoría.
+       - Ventas: evolución temporal y distribución de medios de pago.
+       - Detalle Ventas: análisis de cantidades e importes por ítem.
+    6. Renderizado de gráficos:
+       - Todas las visualizaciones se generan con Matplotlib/Seaborn y se
+         renderizan como imágenes optimizadas dentro de Streamlit.
+
+    Decisiones de diseño:
+    - Los gráficos se adaptan dinámicamente al dataset seleccionado.
+    - Se priorizan visualizaciones interpretables orientadas al negocio.
+    - La función no modifica datos ni persiste resultados; su rol es
+      exclusivamente exploratorio y descriptivo.
 
     Notas:
-    - Todas las visualizaciones se muestran directamente en la app
-      de Streamlit.
-    - La función no recibe parámetros y no devuelve ningún valor.
+    - Todas las salidas (tablas y gráficos) se muestran directamente en la
+      interfaz de Streamlit.
+    - La función no recibe parámetros externos ni retorna valores.
+    - Está pensada como etapa previa al análisis avanzado y al modelado
+      predictivo.
+
+    Uso:
+    Esta función se integra como una página del dashboard analítico y sirve
+    como base para la toma de decisiones posteriores en EDA avanzado,
+    feature engineering y modelado.
     """
     
     st.markdown(

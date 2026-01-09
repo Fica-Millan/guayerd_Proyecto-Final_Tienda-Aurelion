@@ -7,18 +7,56 @@ import plotly.express as px
 
 def show_ml_preprocessing():
     """
-    Ejecuta y visualiza en Streamlit el flujo de preprocesamiento para entrenar
-    modelos de Machine Learning sobre niveles de demanda de productos.
+    Ejecuta y visualiza en Streamlit el pipeline completo de preprocesamiento
+    de datos para el entrenamiento de modelos de Machine Learning orientados
+    a la predicción del nivel de demanda de productos.
 
-    Contenido:
-    - Información general del dataset
-    - Agrupación por producto + verificación de consistencia
-    - Creación y diagnóstico de la variable objetivo (baja / media / alta)
-    - Visualizaciones interactivas
-    - Transformaciones: OHE, mapping, eliminación de columnas de alta cardinalidad
-    - Exportación del dataset final
+    Objetivo:
+    Transformar el dataset transaccional de la tienda Aurelion en un dataset
+    tabular, consistente y apto para modelos de clasificación supervisada,
+    incorporando validaciones, feature engineering y control de calidad.
 
-    No retorna valores; muestra los resultados directamente en la interfaz.
+    Flujo del preprocesamiento:
+    1. Carga del dataset unificado previamente depurado.
+    2. Análisis exploratorio inicial y validaciones de calidad:
+       - Tipos de datos.
+       - Valores nulos.
+       - Distribuciones básicas.
+    3. Agrupación por producto:
+       - Cálculo de métricas agregadas (ventas, unidades, transacciones).
+       - Verificación de consistencia entre totales originales y agregados.
+    4. Feature engineering:
+       - Variables derivadas por transacción.
+    5. Creación de la variable objetivo:
+       - Segmentación de productos en niveles de demanda (baja, media, alta)
+         utilizando cuantiles.
+       - Diagnóstico de distribución y rangos por categoría.
+    6. Visualizaciones interactivas:
+       - Distribución de la variable objetivo.
+       - Ranking de productos por volumen de ventas.
+    7. Transformaciones para Machine Learning:
+       - One-Hot Encoding de variables categóricas.
+       - Codificación numérica de la variable objetivo.
+       - Eliminación de columnas de alta cardinalidad.
+       - Validaciones post-transformación.
+    8. Exportación del dataset final:
+       - Guardado automático en formato CSV.
+       - Descarga manual desde la interfaz.
+
+    Resultados:
+    - Genera el archivo `data/dataset_ml_productos.csv` listo para ser utilizado
+      en procesos de AutoML (PyCaret) y entrenamiento manual de modelos.
+    - Proporciona trazabilidad completa del proceso mediante visualizaciones
+      y validaciones en la interfaz.
+
+    Retorno:
+    Esta función no retorna valores; presenta los resultados y métricas
+    directamente en la interfaz de Streamlit y persiste el dataset procesado
+    en disco.
+
+    Uso:
+    Se integra como la etapa previa obligatoria al modelado de Machine Learning
+    dentro del dashboard analítico del proyecto.
     """
     st.markdown(
         "<h3 style='color:#f1c40f;'>Preprocesamiento para Machine Learning</h3>",
@@ -73,7 +111,6 @@ def show_ml_preprocessing():
         nulos_por_columna = df.isnull().sum()
         st.write(nulos_por_columna[nulos_por_columna > 0])
            
-
     with st.expander("🔸 Detalle por columna"):
         info = pd.DataFrame({
             "Tipo": df.dtypes.astype(str),

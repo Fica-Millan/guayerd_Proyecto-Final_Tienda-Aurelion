@@ -5,6 +5,65 @@ from src.utils.eda_sections import mostrar_seccion_md, mostrar_graficos
 
 
 def mostrar_documentacion():
+    """
+    Página de Streamlit que presenta la documentación integral del proyecto
+    de la tienda Aurelion directamente dentro del dashboard.
+
+    Objetivo:
+    Centralizar y visualizar la documentación funcional, metodológica y técnica
+    del proyecto, permitiendo comprender el contexto del negocio, los datos,
+    el análisis exploratorio y el modelado de Machine Learning sin salir
+    de la aplicación.
+
+    Funcionalidad principal:
+    - Carga y renderiza el archivo Markdown de documentación del proyecto.
+    - Estructura el contenido en secciones navegables mediante expanders.
+    - Integra texto explicativo con gráficos, diagramas e interpretaciones EDA.
+    - Presenta el flujo completo del proyecto desde el problema hasta el modelo.
+
+    Secciones incluidas:
+    1. Contexto y objetivo del proyecto:
+       - Tema.
+       - Problema de negocio.
+       - Solución propuesta.
+    2. Datasets de referencia:
+       - Fuente de los datos.
+       - Descripción, estructura y variables.
+    3. Metodología e implementación:
+       - Información general de la aplicación.
+       - Pasos de la metodología aplicada.
+       - Pseudocódigo del proceso.
+    4. Diagrama del flujo:
+       - Visualización del flujo general del sistema.
+    5. Interpretaciones EDA:
+       - Distribución de variables numéricas.
+       - Matriz de correlación.
+       - Evolución de ventas.
+       - Relación entre variables.
+       - Análisis de outliers.
+    6. Modelado de Machine Learning:
+       - Preprocesamiento para ML.
+       - AutoML con PyCaret.
+       - Entrenamiento manual con Random Forest.
+       - Métricas, curvas ROC, matriz de confusión,
+         importancia de variables y curvas de aprendizaje.
+
+    Recursos utilizados:
+    - Archivo Markdown: `docs/documentacion_tienda_aurelion.md`.
+    - Imágenes y gráficos almacenados en la carpeta `assets/`.
+
+    Comportamiento:
+    - Si el archivo de documentación existe, se muestra su contenido
+      de forma estructurada e interactiva.
+    - Si el archivo no se encuentra, se informa al usuario mediante
+      un mensaje de advertencia.
+
+    Uso:
+    Esta función se integra como la página de documentación del dashboard,
+    funcionando como soporte explicativo del proyecto para evaluadores,
+    usuarios finales o revisiones técnicas.
+    """
+    
     st.markdown(
         "<h3 style='color:#f1c40f;'>Documentación del proyecto</h3>",
         unsafe_allow_html=True

@@ -14,7 +14,55 @@ from src.utils.palette import PALETA
 
 INTERPRETACIONES_PATH = "docs/documentacion_tienda_aurelion.md"
 
-def show_diagnostic_eda():      
+def show_diagnostic_eda(): 
+    """
+    Página de Streamlit para realizar un Análisis Exploratorio de Datos (EDA)
+    orientado al diagnóstico del negocio de la tienda Aurelion.
+
+    Objetivo:
+    Proveer una exploración integral del dataset unificado de ventas,
+    combinando validaciones de calidad de datos, análisis descriptivo,
+    visualizaciones clave y métricas de negocio para apoyar la toma de decisiones.
+
+    Flujo general de la función:
+    1. Carga el dataset unificado desde el almacenamiento local.
+    2. Aplica una recategorización automática de productos a partir del nombre,
+       generando la variable `categoria_corregida`.
+    3. Valida la correcta unificación del dataset y detecta posibles inconsistencias.
+    4. Realiza tareas de limpieza y preparación:
+       - Conversión de fechas.
+       - Eliminación de columnas redundantes.
+       - Renombrado de variables.
+    5. Presenta estadísticas descriptivas de variables numéricas clave.
+    6. Analiza la distribución de variables mediante histogramas y boxplots.
+    7. Evalúa relaciones entre variables numéricas mediante correlaciones.
+    8. Genera visualizaciones principales de negocio:
+       - Evolución de ventas mensuales.
+       - Relación entre cantidad vendida y total de ventas.
+       - Ranking de productos por categoría.
+    9. Detecta y analiza outliers relevantes.
+    10. Ofrece una interpretación preliminar orientada al análisis comercial.
+
+    Visualizaciones incluidas:
+    - Distribución de variables numéricas.
+    - Matriz de correlación.
+    - Ventas totales por mes con destacados de máximos y mínimos.
+    - Gráfico de dispersión cantidad vs total de venta.
+    - Top productos por categoría.
+    - Boxplots para detección de outliers.
+
+    Salidas:
+    - Dataset modificado y enriquecido guardado automáticamente en:
+      `data/df_tienda_aurelion_modificado.csv`.
+    - Posibilidad de descarga manual del dataset final desde la interfaz.
+
+    Uso:
+    Esta función se integra como una página de diagnóstico dentro del dashboard
+    de análisis de la tienda Aurelion, permitiendo validar datos, detectar patrones
+    comerciales y obtener insights preliminares antes de etapas de modelado
+    predictivo o análisis avanzado.
+    """
+         
     st.markdown(
         "<h3 style='color:#f1c40f;'>EDA Diagnóstico del negocio</h3>",
         unsafe_allow_html=True

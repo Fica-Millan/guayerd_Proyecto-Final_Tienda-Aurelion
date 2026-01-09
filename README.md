@@ -4,7 +4,7 @@
 
 <div align="center">
 
-   ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+   ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)
    ![Status](https://img.shields.io/badge/Status-Terminado-green)
    ![Author](https://img.shields.io/badge/Autor-Yesica%20Fica%20Mill%C3%A1n-purple)
 
@@ -43,13 +43,14 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 ├── data/                         # Datasets del proyecto
 │   ├── clientes.xlsx             # Datos maestros de clientes
 │   ├── productos.xlsx            # Catálogo y atributos de productos
+│   ├── productos_corregidos.xlsx # 
 │   ├── ventas.xlsx               # Registro de ventas por transacción
 │   ├── detalle_ventas.xlsx       # Detalle por línea de venta (productos por venta)
 │   ├── df_tienda_aurelion.csv    # Dataset unificado (generado automáticamente)
 │   ├── df_tienda_aurelion_modificado.csv  # Versión limpiada / transformada del unificado
 │   └── dataset_ml_productos.csv  # Dataset preprocesado para ML (features agregados + target)
 │
-├── docs/                         # Documentación del proyecto (MD y notebooks)
+├── docs/                         # Documentación del proyecto 
 │   ├── documentacion_tienda_aurelion.md  # Documentación técnica completa
 │   ├── instrucciones.md          # Instrucciones y notas del proyecto
 │   └── Sprint02_GrupoA.ipynb     # Notebook del Sprint 02 (trabajo grupal presentado en clase)
@@ -58,24 +59,24 @@ Este proyecto consiste en una aplicación interactiva llamada **Tienda Aurelion*
 │   ├── auto_ml_model.pkl         # Modelo exportado desde AutoML (PyCaret)
 │   └── random_forest_manual.pkl  # Modelo exportado desde entrenamiento manual
 │
+├── scripts/                      # Scripts auxiliares y utilidades
+│   └── preparar_para_powerbi.py  # Script para preparar datos y exportar a Power BI
+│
 ├── src/                          # Módulos Python del proyecto
-│   ├── __init__.py
 │   ├── data_loader.py            # Funciones para cargar y unificar los datasets
 │   │
 │   ├── pages/                    # Páginas de la aplicación (Streamlit)
-│   │   ├── __init__.py
 │   │   ├── automated_eda.py      # Página: EDA automatizado (ydata-profiling)
 │   │   ├── automated_ml.py       # Página: AutoML / benchmarking con PyCaret
+│   │   ├── dashboard.py          # Página: dashboard ejecutivo con KPIs y visualizaciones interactivas (Plotly)
 │   │   ├── diagnostic_eda.py     # Página: EDA diagnóstico y visualizaciones detalladas
 │   │   ├── documentacion.py      # Página: muestra la documentación técnica (MD)
 │   │   ├── general_info.py       # Página: información general y vistas previas de datasets
 │   │   ├── ml_preprocessing.py   # Página: interfaz de preprocesamiento para ML
 │   │   ├── random_forest_manual.py # Página: entrenamiento manual y evaluación (Random Forest)
-│   │   ├── dashboard.py          # Página: dashboard ejecutivo con KPIs y visualizaciones interactivas (Plotly)
 │   │   └── statistics.py         # Página: estadísticas descriptivas y gráficos
 │   │
 │   └── utils/                    # Utilidades y helpers reutilizables
-│       ├── __init__.py
 │       ├── classification.py     # Funciones auxiliares para clasificación y métricas
 │       ├── docs_loader.py        # Helpers para leer y dividir documentación MD
 │       ├── eda_sections.py       # Componentes y funciones para secciones EDA
@@ -139,6 +140,7 @@ La aplicación trabaja con los siguientes datasets:
  
 Adicionalmente el proyecto incluye los siguientes archivos derivados/auxiliares en `data/`:
 
+- `productos_corregidos.xlsx`: Archivo corregido y recategorizado (generado por `scripts/preparar_para_powerbi.py`). Para regenerarlo: `python scripts/preparar_para_powerbi.py`.
 - `df_tienda_aurelion_modificado.csv`: Versión modificada/limpia del dataset unificado (usada en análisis posteriores).
 - `dataset_ml_productos.csv`: Dataset preprocesado y preparado específicamente para modelado (features agregados y target `nivel_demanda`).
 
@@ -148,7 +150,7 @@ Notas:
 
 ## 🟧 Tecnologías utilizadas
 
-- Python 3.11
+- Python 3.13
 - Streamlit
 - Pandas
 - NumPy

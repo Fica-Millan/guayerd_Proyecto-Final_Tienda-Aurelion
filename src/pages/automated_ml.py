@@ -13,6 +13,46 @@ import pickle
 
 @st.cache_resource(show_spinner=False)
 def run_automl(df, target, normalize, remove_multicollinearity):
+    """
+    Ejecuta un proceso de AutoML para clasificación utilizando PyCaret,
+    configurando el experimento y comparando múltiples modelos candidatos.
+
+    Parámetros:
+    - df (pd.DataFrame): Dataset preprocesado que contiene las variables
+      predictoras y la variable objetivo.
+    - target (str): Nombre de la columna objetivo a predecir.
+    - normalize (bool): Indica si se aplica normalización a las variables
+      numéricas durante el setup del experimento.
+    - remove_multicollinearity (bool): Indica si se elimina multicolinealidad
+      entre variables predictoras según el umbral por defecto de PyCaret.
+
+    Flujo de la función:
+    1. Inicializa el experimento de PyCaret mediante `setup`, fijando un
+       `session_id` para garantizar reproducibilidad.
+    2. Ejecuta la comparación automática de modelos de clasificación
+       previamente seleccionados.
+    3. Ordena los modelos según la métrica AUC utilizando validación cruzada.
+    4. Recupera la tabla de métricas generada por PyCaret.
+
+    Modelos evaluados:
+    - Regresión Logística (lr)
+    - Random Forest (rf)
+    - Gradient Boosting Classifier (gbc)
+    - LightGBM (lightgbm)
+    - K-Nearest Neighbors (knn)
+
+    Métrica de evaluación:
+    - AUC (Area Under the ROC Curve)
+
+    Retorna:
+    - best_model: Modelo entrenado con mejor desempeño según AUC.
+    - results (pd.DataFrame): Tabla comparativa de métricas de los modelos evaluados.
+
+    Uso:
+    Esta función se utiliza como núcleo del flujo de AutoML para identificar
+    rápidamente el modelo más prometedor antes de realizar un desarrollo
+    manual o un ajuste fino de hiperparámetros.
+    """
     setup(
         data=df,
         target=target,
@@ -28,10 +68,8 @@ def run_automl(df, target, normalize, remove_multicollinearity):
         fold=3
     )
 
-
     results = pull()
     return best_model, results
-
 
 def show_automated_ml():
     """

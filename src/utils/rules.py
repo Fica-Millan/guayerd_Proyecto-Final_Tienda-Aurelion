@@ -1,5 +1,19 @@
 # src/utils/rules.py
 
+"""
+rules.py
+--------
+
+Definición de reglas de clasificación de productos a categorías comerciales.
+
+El módulo contiene dos niveles de reglas:
+1) Clasificaciones exactas por nombre de producto.
+2) Clasificaciones basadas en expresiones regulares aplicadas sobre el texto normalizado.
+
+Estas reglas se utilizan para inferir la categoría de un producto a partir
+de su descripción textual cuando no existe una clasificación explícita.
+"""
+
 import re
 
 # ==============================================================

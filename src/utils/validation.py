@@ -8,8 +8,27 @@ import streamlit as st
 
 def verificar_fallbacks(df):
     """
-    Devuelve productos que quedaron en 'Alimentos secos' pero no
-    coinciden con ninguna keyword real de esta categoría.
+    Identifica productos clasificados como 'Alimentos secos' que quedaron
+    asignados por fallback y no coinciden con ningún patrón regex válido
+    definido para esa categoría.
+
+    La función valida los nombres de producto contra las keywords reales
+    configuradas en RULES["Alimentos secos"] para detectar clasificaciones
+    potencialmente incorrectas.
+
+    Parámetros
+    ----------
+    df : pd.DataFrame
+        Dataset con al menos las columnas 'nombre_producto' y
+        'categoria_corregida'.
+
+    Retorna
+    -------
+    alimentos_reales : pd.DataFrame
+        Productos clasificados como 'Alimentos secos'.
+    fallas : pd.DataFrame
+        Subconjunto de productos que no matchean ninguna keyword válida
+        (verdaderos casos de fallback).
     """
     
     alimentos_keywords = RULES["Alimentos secos"]
@@ -33,7 +52,16 @@ def verificar_fallbacks(df):
 
 
 def mostrar_validaciones_fallback(alimentos_reales: pd.DataFrame, fallas: pd.DataFrame):
-    """Muestra la validación de fallbacks con la misma lógica, pero ordenada."""
+    """
+    Visualiza en Streamlit el resultado de la validación de fallbacks para
+    la categoría 'Alimentos secos', mostrando métricas y listados de casos
+    inconsistentes.
+
+    Presenta indicadores resumen y mensajes contextuales según el nivel
+    de fallas detectadas, permitiendo evaluar rápidamente la calidad de
+    las reglas de clasificación.
+    """
+    
     st.write("### 🔸 Validación de fallbacks")
 
     # Métricas
