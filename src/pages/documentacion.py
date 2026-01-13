@@ -3,7 +3,34 @@ import os
 from pathlib import Path
 from src.utils.eda_sections import mostrar_seccion_md, mostrar_graficos
 
+def mostrar_vista_con_imagen(contenido_md, inicio_str, fin_str, imagen, caption):
+    """
+    Muestra una sección de la documentación del dashboard asociada a una vista específica,
+    combinando una imagen representativa del dashboard con su descripción textual.
 
+    La función extrae dinámicamente un fragmento del contenido Markdown en base a strings
+    delimitadores, y lo renderiza junto a la imagen correspondiente, manteniendo alineadas
+    la explicación conceptual y la representación visual de cada vista replicada.
+
+    Args:
+        contenido_md (str): Contenido completo del archivo Markdown de documentación.
+        inicio_str (str): Cadena que indica el inicio de la sección a mostrar dentro del Markdown.
+        fin_str (str): Cadena que indica el final de la sección a mostrar dentro del Markdown.
+        imagen (str): Ruta al archivo de imagen asociado a la vista del dashboard.
+        caption (str): Texto descriptivo que se muestra como leyenda de la imagen.
+
+    Returns:
+        None
+    """
+    st.image(imagen, caption=caption, width="content")
+    st.markdown(
+        contenido_md[
+            contenido_md.find(inicio_str) + len(inicio_str):
+            contenido_md.find(fin_str)
+        ],
+        unsafe_allow_html=True
+    )
+    
 def mostrar_documentacion():
     """
     Página de Streamlit que presenta la documentación integral del proyecto
@@ -329,6 +356,83 @@ def mostrar_documentacion():
             # ---- Última parte del texto ----
             st.markdown(partes[1], unsafe_allow_html=True)
 
-                    
+              
+        # 🟡 --- Dashboard Ejecutivo ---
+        st.markdown(
+            "<h4 style='color:#f1c40f;'>Dashboard Ejecutivo</h4>",
+            unsafe_allow_html=True
+        )
+
+        inicio = contenido_md.find("### Dashboard Ejecutivo") + len("### Dashboard Ejecutivo")
+        dashboard_md = contenido_md[inicio:]
+
+        # ◽ Dashboard 
+        with st.expander("🔸 Dashboard"):
+            st.markdown(
+                dashboard_md[
+                    dashboard_md.find("#### 🔸 Dashboard")+ len("#### 🔸 Dashboard"):
+                    dashboard_md.find("#### 🔸 Réplicas de Vistas")
+                ],
+                unsafe_allow_html=True
+            )
+
+        # ◽ Réplicas de Vistas
+        with st.expander("🔸 Réplicas de Vistas"):
+
+            # 1️⃣ Vista Principal
+            st.markdown("##### 1️⃣ Vista Principal del Dashboard en Power BI")
+            mostrar_vista_con_imagen(
+                contenido_md,
+                inicio_str="1️⃣ **Vista Principal del Dashboard en Power BI**",
+                fin_str="2️⃣ **Análisis de Ventas**",
+                imagen="assets/Dasboard-vista-principal.png",
+                caption="Vista principal del Dashboard en Power BI"
+            )
+
+            # 2️⃣ Análisis de Ventas
+            st.markdown("##### 2️⃣ Análisis de Ventas")
+            mostrar_vista_con_imagen(
+                contenido_md,
+                inicio_str="2️⃣ **Análisis de Ventas**",
+                fin_str="3️⃣ **Análisis de Clientes**",
+                imagen="assets/Dasboard-analisis-de-ventas.png",
+                caption="Vista de Análisis de Ventas"
+            )
+
+            # 3️⃣ Análisis de Clientes
+            st.markdown("##### 3️⃣ Análisis de Clientes")
+            mostrar_vista_con_imagen(
+                contenido_md,
+                inicio_str="3️⃣ **Análisis de Clientes**",
+                fin_str="4️⃣ **Análisis de Productos**",
+                imagen="assets/Dashboard-analisis-de-clientes.png",
+                caption="Vista de Análisis de Clientes"
+            )
+
+            # 4️⃣ Análisis de Productos
+            st.markdown("##### 4️⃣ Análisis de Productos")
+            mostrar_vista_con_imagen(
+                contenido_md,
+                inicio_str="4️⃣ **Análisis de Productos**",
+                fin_str="#### 🔸 Conclusiones",
+                imagen="assets/Dashboard-analisis-de-productos.png",
+                caption="Vista de Análisis de Productos"
+            )
+
+        # ◽ Conclusiones
+        with st.expander("🔸 Conclusiones"):
+            st.markdown(
+                dashboard_md[
+                    dashboard_md.find("#### 🔸 Conclusiones")+len ("#### 🔸 Conclusiones"):
+                ],
+                unsafe_allow_html=True
+            )
+                            
+                                 
     else:
         st.warning("El archivo de documentación no se encontró.")
+
+
+
+
+

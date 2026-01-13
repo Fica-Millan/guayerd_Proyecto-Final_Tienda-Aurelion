@@ -13,7 +13,7 @@
     - [Información](#información)
     - [Pasos](#pasos)
     - [Pseudocódigo](#pseudocódigo)
-    - [Diagrama del flujo 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡](#diagrama-del-flujo-)
+    - [Diagrama del flujo](#diagrama-del-flujo)
     - [Interpretaciones EDA – Visualizaciones](#interpretaciones-eda--visualizaciones)
       - [🔸 Gráfica: distribucion\_numericas](#-gráfica-distribucion_numericas)
       - [🔸 Gráfica: correlacion](#-gráfica-correlacion)
@@ -23,6 +23,10 @@
     - [Preprocesamiento para Machine Learning](#preprocesamiento-para-machine-learning)
     - [AutoML: Benchmarking con PyCaret](#automl-benchmarking-con-pycaret)
     - [Entrenamiento Manual: Random Forest](#entrenamiento-manual-random-forest)
+    - [Dashboard Ejecutivo](#dashboard-ejecutivo)
+      - [🔸 Dashboard](#-dashboard)
+      - [🔸 Réplicas de Vistas](#-réplicas-de-vistas)
+      - [🔸 Conclusiones](#-conclusiones)
 
 ---
 
@@ -101,7 +105,7 @@ _Nota_: Estos datasets son de carácter didáctico y se proporcionan solo con fi
 
 ### Estructura
 
-Cada dataset es estructurado; se organiza en filas que representan registros individuales y columnas que representan atributos de interés para el análisis. Contienen datos tanto cuantitativos como cualitativos. Todos ellos en formato .xlsx (Excel).
+Cada dataset está estructurado: se organiza en filas que representan registros individuales y columnas que representan atributos de interés para el análisis. Contienen datos tanto cuantitativos como cualitativos. Todos ellos en formato .xlsx (Excel).
 
 ---
 
@@ -110,7 +114,7 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
 🔸 **Nombre del programa:** Proyecto Tienda Aurelion
 
 🔸 **Objetivo:**
-  Permitir la exploración interactiva de los datos de ventas, clientes y productos de la tienda, proporcionados en los siguientes dataset:
+  Permitir la exploración interactiva de los datos de ventas, clientes y productos de la tienda, proporcionados en los siguientes conjuntos de datos:
   - `clientes.xlsx`
   - `productos.xlsx`
   - `ventas.xlsx` 
@@ -122,23 +126,26 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
 
 🔸 **Lenguaje y librerías utilizadas**
 
-  - `Python 3.9`
-  - Librerías principales:
-    - `streamlit` (interfaz web)
-    - `pandas` (manipulación de datos)
-    - `Pillow` / `PIL` (manipulación de imágenes)
-    - `numpy` (cálculo numérico)
-    - `matplotlib`, `seaborn` (visualización)
-    - `ydata-profiling` (EDA automatizado)
+  - `Python 3.13` (entorno recomendado; crea un virtualenv para reproducibilidad)
+  - Librerías principales (versiones en `requirements.txt`):
+    - `streamlit==1.52.1` (interfaz web)
+    - `pandas==2.1.4` (manipulación de datos)
+    - `Pillow==12.0.0` (manipulación de imágenes)
+    - `numpy==1.26.4` (cálculo numérico)
+    - `matplotlib==3.7.5`, `seaborn==0.13.2` (visualización)
+    - `plotly==6.5.0` (visualización interactiva)
+    - `ydata-profiling==4.18.0` (EDA automatizado)
     - `streamlit-pandas-profiling` (integración de perfiles en Streamlit)
+    - `wordcloud==1.9.4` (nubes de palabras)
   - Librerías para Machine Learning:
-    - `pycaret` (AutoML / benchmarking)
+    - `pycaret==3.3.2` (AutoML / benchmarking)
     - `scikit-learn` (`sklearn`: preprocesamiento, modelos y métricas)
-    - `joblib` / `pickle` (serialización de modelos)
+    - `joblib==1.3.2` (serialización de modelos)
   - Utilidades y sistema de archivos:
     - `os`, `pathlib` (gestión de rutas y archivos)
-    - `pickle` (serialización en memoria/file)
-  - Observación: Algunas dependencias se usan indirectamente (p. ej. `openpyxl` como motor de `pandas.read_excel`).
+    - `openpyxl==3.1.5` (motor para lectura/escritura de Excel)
+    - `pickle` (serialización en memoria o en archivo)
+  - Observación: Las versiones exactas están en `requirements.txt`; para reproducir el entorno usar `pip install -r requirements.txt`. Si quieres, actualizo esta sección para listar los paquetes opcionales o los requisitos de desarrollo (test, lint, etc.).
 
 🔸 **Entrada de datos**
   - Archivos Excel: `clientes.xlsx`, `productos.xlsx`, `ventas.xlsx`, `detalle_ventas.xlsx`
@@ -179,13 +186,20 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
     - Validación cruzada, métricas de test, curvas ROC y matriz de confusión
     - Interpretación mediante `feature_importances_` y curvas de aprendizaje
     - Guardado y descarga del modelo (`joblib`/`pickle`)
-  - **Documentación Interactiva**: Acceso organizado a la documentación técnica del proyecto
-  - **Exportación de artefactos**: Guardado automático de figuras en `assets/plots` y modelos en `models/`
+  - **Dashboard Ejecutivo**: Vista ejecutiva y operativa para toma de decisiones:
+    - Panel ejecutivo con KPIs: Ticket Promedio, Total Ventas, Unidades vendidas, % Top10, Promedio móvil.
+    - Vistas por sección: Ventas (tendencia, ventas por categoría, ranking), Clientes (ventas por ciudad, ticket promedio), Productos (rotación, stock crítico, top N por ventas).
+    - Filtros globales interactivos: rango de fechas, categoría, ciudad (aplican a todas las vistas).
+    - Opciones de exportación: descargar CSV del dataset filtrado, descargar gráficos (PNG) y generar reporte (PDF/imagen).
+    - Guardado automático de imágenes y figuras en `assets/plots` y posibilidad de descarga directa.
+  - **Documentación Interactiva**: Acceso organizado a la documentación técnica del proyecto, pseudocódigo y diagramas.
+  - **Exportación de artefactos y utilidades**: Guardado automático de figuras en `assets/plots`, modelos en `models/`, y opciones para descargar conjuntos de datos filtrados y reportes.
 
 🔸 **Estructura del programa**
   - **Carga y Unificación**: 
-    - Función `load_dataset()` con caché de Streamlit
-    - Generación automática del dataset unificado mediante `load_and_merge_datasets()`
+    - Función `load_dataset()` con caché de Streamlit (`st.cache_data`) para eficiencia y reproducibilidad.
+    - Generación automática del dataset unificado mediante `load_and_merge_datasets()` y guardado como CSV para uso posterior.
+    - Validaciones y checks: tipos de dato, valores nulos y cardinalidad antes del procesamiento.
   - **Menú Principal**: Radio buttons en la barra lateral con las opciones:
     - Información General
     - Estadísticas
@@ -194,11 +208,17 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
     - Preprocesamiento ML
     - ML Automatizado
     - Entrenamiento Random Forest
+    - Dashboard Ejecutivo
     - Ver Documentación
   - **Módulos Organizados**:
-    - Cargadores de datos (`data_loader.py`)
-    - Páginas separadas por funcionalidad (`pages/`)
-    - Utilidades de visualización (`utils/`)
+    - Cargadores de datos (`data_loader.py`) — lectura, validación y unificación de fuentes.
+    - Páginas separadas por funcionalidad (`src/pages/`): `general_info.py`, `statistics.py`, `automated_eda.py`, `diagnostic_eda.py`, `ml_preprocessing.py`, `automl.py`, `random_forest_manual.py`, `dashboard.py`, `documentacion.py`.
+    - Utilidades (`src/utils/`): `figures.py` (guardado/estilo de gráficas), `dashboard_utils.py` (cálculo de KPIs), `export.py` (descarga CSV/PDF/PNG), `validation.py`.
+    - Recursos y artefactos:
+       - `assets/plots/` para figuras generadas automáticamente
+       - `models/` para modelos serializados (`joblib` / `pickle`)
+       - `docs/` y `README.md` para documentación y reproducibilidad
+    - Observaciones de rendimiento: operaciones costosas (ProfileReport, generación de KPIs agregados) se cachean o se ejecutan bajo demanda para mejorar la UX.
 
 ---
 
@@ -225,6 +245,7 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
   - **Preprocesamiento ML**: Limpieza, transformación y preparación del dataset para entrenamiento.
   - **AutoML (Benchmark)**: Comparación automática de múltiples modelos y selección del mejor rendimiento.
   - **Entrenamiento Manual (Random Forest)**: Configuración, entrenamiento y evaluación detallada del modelo Random Forest.
+  - **Dashboard Ejecutivo**: Acceso al Dashboard Ejecutivo con KPIs y vistas (Ventas / Clientes / Productos)
   - **Ver Documentación**: Acceso a documentación técnica
 
 <h5>4️⃣ <b>Opción: Información General</b></h5>
@@ -241,7 +262,7 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
 
    - Selección interactiva del dataset a analizar
    - Análisis estadístico completo que incluye:
-     - Estadísticas descriptivas via `describe(include="all")`
+     - Estadísticas descriptivas vía `describe(include="all")`
      - Análisis de valores nulos y únicos
      - Visualizaciones específicas según tipo de datos:
        • Variables numéricas: histogramas y boxplots
@@ -298,7 +319,18 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
   - Mostrar importancia de variables (`feature_importances_`) y curvas de aprendizaje.
   - Guardar modelo entrenado (`joblib`/`pickle`) y ofrecer descarga.
 
-<h5>1️⃣1️⃣ <b>Opción: Ver Documentación</b></h5>
+<h5>1️⃣1️⃣ <b>Opción: Dashboard Ejecutivo</b></h5>
+
+  - Presentar KPIs principales en una vista ejecutiva: Ticket Promedio, Total de Ventas, Unidades vendidas, % Top10, Promedio móvil.
+  - Ofrecer vistas por sección: 
+      • Ventas: tendencia, ventas por categoría, ranking de productos
+      • Clientes: ventas por ciudad, ticket promedio, clientes activos
+      • Productos: rotación, stock crítico, top N por ventas
+  - Añadir filtros globales: rango de fechas, categoría y ciudad (aplican a todas las vistas).
+  - Permitir exportación: descargar CSV del dataset filtrado, descargar gráficos (PNG) y generar reporte (PDF/imagen).
+  - Guardar imágenes y figuras en `assets/plots` y permitir descarga directa.
+
+<h5>1️⃣2️⃣ <b>Opción: Ver Documentación</b></h5>
 
    - Lectura y procesamiento de `documentacion_tienda_aurelion.md`
    - Contenido organizado en expanders por secciones:
@@ -308,7 +340,7 @@ Cada dataset es estructurado; se organiza en filas que representan registros ind
      • Diagrama de flujo
    - Visualización adaptativa del flujograma
 
-<h5>1️⃣2️⃣ <b>Interactividad</b></h5>
+<h5>1️⃣3️⃣ <b>Interactividad</b></h5>
 
    - Los **expanders** permiten ocultar o desplegar secciones para una interfaz más limpia.  
    - Los **selectboxes** ofrecen navegación dinámica entre datasets y apartados.  
@@ -332,7 +364,7 @@ INICIO
     - Columna 2: mostrar título del proyecto y descripción general
 
 3. Definir funciones de carga y unificación:
-    FUNCION get_dataset_paths():
+    FUNCIÓN get_dataset_paths():
         Retornar diccionario con rutas de:
             - clientes.xlsx
             - productos.xlsx
@@ -340,34 +372,34 @@ INICIO
             - detalle_ventas.xlsx
             - df_tienda_aurelion.csv
 
-    FUNCION load_dataset(nombre):
+    FUNCIÓN load_dataset(nombre):
         - Obtener rutas mediante get_dataset_paths()
-        - SI nombre es "df_tienda_aurelion" y no existe:
+        - SI el nombre es "df_tienda_aurelion" y no existe:
             Llamar a load_and_merge_datasets()
-        - SI es archivo Excel:
+        - SI es un archivo Excel:
             Leer con pandas.read_excel()
-        - SI es archivo CSV:
+        - SI es un archivo CSV:
             Leer con pandas.read_csv()
-        - Manejar errores y mostrar advertencias
+        - Manejar errores y mostrar mensajes de advertencia
 
-    FUNCION load_and_merge_datasets():
+    FUNCIÓN load_and_merge_datasets():
         - Cargar los 4 datasets Excel
-        - Realizar merge progresivo:
+        - Realizar fusión progresiva:
             1. clientes + ventas
             2. ventas + clientes
             3. detalle_ventas + productos
-            4. merge final
+            4. fusión final
         - Calcular total_venta y convertir fechas
         - Guardar como CSV
         - Retornar DataFrame unificado
 
 4. Definir utilidades de visualización:
-    FUNCION save_fig_to_disk(figura, nombre, carpeta="assets/plots"):
-        - Crear carpeta si no existe
+    FUNCIÓN save_fig_to_disk(figura, nombre, carpeta="assets/plots"):
+        - Crear la carpeta si no existe
         - Limpiar nombre del archivo
         - Guardar figura con calidad apropiada
 
-    FUNCION mostrar_fig(figura, ancho=700):
+    FUNCIÓN mostrar_fig(figura, ancho=700):
         - Mostrar en Streamlit
         - Opcionalmente guardar en disco
         - Cerrar figura
@@ -376,7 +408,11 @@ INICIO
     - "Información general"
     - "Estadísticas"
     - "EDA Automatizado"
-    - "EDA Diagnóstico" 
+    - "EDA Diagnóstico"
+    - "Preprocesamiento ML"
+    - "ML Automatizado"
+    - "Entrenamiento Random Forest"
+    - "Dashboard Ejecutivo"
     - "Ver documentación"
 
 6. SI la opción es "Información general":
@@ -393,13 +429,9 @@ INICIO
         - Información general del dataset
         - Valores nulos por columna
         - Valores únicos por columna
-        - Estadísticas descriptivas
+        - Estadísticas descriptivas (describe)
         - Matriz de correlación (si hay numéricas)
-        - Visualizaciones específicas según el dataset:
-            • Clientes: distribución por ciudad y mes
-            • Productos: distribución de precios y categorías
-            • Ventas: evolución mensual y medios de pago
-            • Detalle: distribución de cantidades e importes
+        - Visualizaciones específicas según el dataset
 
 8. SI la opción es "EDA Automatizado":
     - Cargar/generar df_tienda_aurelion
@@ -413,15 +445,10 @@ INICIO
         • Convertir fechas a datetime
         • Renombrar columnas si necesario
         • Eliminar columnas duplicadas
-    - Generar y guardar visualizaciones:
-        • Distribución de variables numéricas
-        • Matriz de correlación
-        • Series temporales de ventas
-        • Top productos
-        • Detección de outliers
+    - Generar y guardar visualizaciones
     - Mostrar interpretación de resultados
 
-10. SI la opción es "Preprocesamiento ML"
+10. SI la opción es "Preprocesamiento ML":
     - Seleccionar objetivo (target) y variables predictoras
     - Mostrar y aplicar opciones de preprocesamiento:
       • Manejo de nulos: imputación (media/mediana/moda)
@@ -431,7 +458,7 @@ INICIO
     - Mostrar split train/test configurable (p. ej. 80/20) y semilla
     - Retornar datasets: X_train, X_test, y_train, y_test
 
-11. SI la opción es "AutoML (Benchmark)"
+11. SI la opción es "AutoML (Benchmark)":
     - Usar PyCaret (o librería similar) para benchmarking automático
     - Pasos:
       - Cargar dataset preprocesado
@@ -440,7 +467,7 @@ INICIO
       - Mostrar top N modelos y métricas (AUC, Accuracy, RMSE según caso)
       - Permitir seleccionar mejor modelo y guardar configuración
 
-12. SI la opción es "Entrenamiento Manual (Random Forest)"
+12. SI la opción es "Entrenamiento Manual (Random Forest)":
     - Cargar dataset preprocesado
     - Permitir selección de hiperparámetros (n_estimators, max_depth, random_state)
     - Entrenar modelo RandomForestClassifier/Regressor según el caso
@@ -448,7 +475,19 @@ INICIO
     - Mostrar interpretación de importancia de características (feature_importances_)
     - Guardar modelo entrenado (`joblib` / `pickle`) y permitir descarga
 
-13. SI la opción es "Ver documentación":
+13. SI la opción es "Dashboard Ejecutivo":
+    - Cargar datasets y/o df_tienda_aurelion agregados
+    - Generar KPIs principales: Ticket Promedio, Total Ventas, Unidades, % Top10, Promedio móvil
+    - Crear vistas por sección:
+        • Ventas: tendencia, ventas por categoría, ranking de productos
+        • Clientes: ventas por ciudad, ticket promedio, clientes activos
+        • Productos: rotación, stock crítico, top N por ventas
+    - Añadir filtros globales (rango de fechas, categoría, ciudad)
+    - Implementar opciones de exportación (descarga de gráficos, exportar CSV, generar reporte PDF/imagen)
+    - Ofrecer réplica de vistas principales del Dashboard de Power BI (KPIs + vistas principales)
+    - Guardar imágenes y figuras en `assets/plots` y permitir descarga
+
+14. SI la opción es "Ver documentación":
     - Verificar existencia de documentacion_tienda_aurelion.md
     - SI existe:
         - Leer contenido y dividir en secciones
@@ -457,7 +496,7 @@ INICIO
     - SINO:
         - Mostrar advertencia
 
-14. Mostrar pie de página (footer):
+15. Mostrar pie de página (footer):
     - Información del Sprint
     - Autor y enlace a LinkedIn
 
@@ -468,7 +507,7 @@ FIN
 ---
 
 
-### Diagrama del flujo 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
+### Diagrama del flujo
 
 A continuación, se presenta el flujograma del proceso general del proyecto **Tienda Aurelion**.  
 Este diagrama ilustra las principales etapas del flujo del programa, desde la carga de los datasets hasta la visualización interactiva de la información en la aplicación web.
@@ -832,3 +871,156 @@ Este enfoque ayuda a tomar decisiones estratégicas en gestión de inventario, c
 ---
 
 
+
+### Dashboard Ejecutivo
+
+#### 🔸 Dashboard
+
+1️⃣ **Objetivo**
+
+Se desarrolló un Dashboard Ejecutivo con el objetivo de replicar funcional y visualmente el dashboard previamente construido en Power BI, manteniendo los mismos indicadores clave (KPIs), estructura analítica y lógica de navegación, pero implementado dentro del ecosistema de la aplicación Tienda Aurelion.
+
+El propósito principal de este dashboard es brindar una visión sintética y estratégica del desempeño del negocio, orientada a la toma de decisiones gerenciales, permitiendo analizar ventas, clientes y productos durante el primer semestre de 2024 (Enero–Junio).
+
+2️⃣ **Enfoque y criterios de diseño**
+
+El dashboard fue diseñado bajo los siguientes lineamientos:
+
+- Replicar los KPIs definidos en Power BI, asegurando consistencia en métricas, cálculos y resultados.
+- Mantener una estructura modular, separando el análisis en tres vistas principales:
+  - Análisis de Ventas
+  - Análisis de Clientes
+  - Análisis de Productos
+- Priorizar una lectura ejecutiva, con indicadores agregados, gráficos claros y mensajes de insight destacados.
+- Incorporar filtros globales (mes, categoría) para facilitar el análisis dinámico.
+- Utilizar una navegación simple e intuitiva, simulando la experiencia de un dashboard corporativo.
+
+3️⃣ **Valor del Dashboard Ejecutivo**
+
+El Dashboard Ejecutivo consolida información crítica del negocio en un único entorno visual, logrando:
+
+- Reproducir fielmente el dashboard de Power BI en términos de métricas y análisis.
+- Facilitar la toma de decisiones estratégicas a partir de información clara y accionable.
+- Integrar análisis descriptivo con indicadores de gestión y alertas operativas.
+- Servir como base para futuras extensiones analíticas y modelos predictivos.
+
+#### 🔸 Réplicas de Vistas
+
+1️⃣ **Vista Principal del Dashboard en Power BI**
+
+En el dashboard original desarrollado en Power BI, la vista principal funciona como un contenedor de navegación, desde el cual se accede a distintas páginas analíticas (Ventas, Clientes y Productos), todas ellas compartiendo filtros y contexto temporal.
+
+La cual incluía:
+- Identidad visual de la marca Aurelion Retail Supermarket.
+- Título general del informe: “Diagnóstico de rotación y comportamiento del mercado – H1 2024”
+- Accesos directos a las tres secciones analíticas:
+  - Análisis de Ventas
+  - Análisis de Clientes
+  - Análisis de Productos
+
+Esta vista permitía al usuario comprender rápidamente el alcance del análisis y navegar hacia el nivel de detalle requerido.
+
+En la aplicación Tienda Aurelion, esta lógica fue replicada conceptualmente, pero adaptada al paradigma de navegación de Streamlit, donde:
+- No existe una “portada visual” única con KPIs consolidados.
+- La vista principal se materializa como un conjunto de páginas analíticas independientes, accesibles desde el sidebar, cada una equivalente a una página del dashboard de Power BI.
+
+De esta forma, la aplicación mantiene la misma estructura analítica, pero distribuida en tres páginas funcionales.
+
+2️⃣ **Análisis de Ventas**
+
+La sección de Análisis de Ventas presenta los principales indicadores de desempeño comercial:
+
+KPIs principales:
+- Ticket Promedio (con variación porcentual)
+- Cantidad de Transacciones (con variación porcentual)
+- Total de Ventas
+- Promedio Móvil de Ventas (3 meses)
+
+Visualizaciones incluidas:
+- Tendencia de ventas mensuales con promedio móvil.
+- Ventas totales por categoría de producto.
+- Ranking de productos por total de ventas.
+
+Mensajes de insight automático, como:
+- “El mes con mayor crecimiento fue mayo”
+- “Alimentos secos representa la categoría de mayor impacto”
+
+Esta vista permite identificar patrones temporales, categorías dominantes y productos de mayor contribución al revenue.
+
+3️⃣ **Análisis de Clientes**
+
+La sección de Análisis de Clientes está orientada a comprender el comportamiento de compra y la distribución geográfica de las ventas.
+
+KPIs principales:
+- Total de clientes
+- Ticket promedio
+- Unidades promedio por transacción
+
+Visualizaciones incluidas:
+- Ventas totales por ciudad.
+- Tabla comparativa por ciudad con:
+  - Cantidad de clientes
+  - Ticket promedio
+  - Total de ventas
+- Distribución de ventas por medio de pago (efectivo, QR, transferencia y tarjeta).
+
+Esta vista permite detectar diferencias regionales, hábitos de consumo y preferencias de pago.
+
+4️⃣ **Análisis de Productos**
+
+La sección de Análisis de Productos se enfoca en la rotación, concentración de ventas y riesgo de stock.
+
+KPIs principales:
+- Total de unidades vendidas
+- Ventas promedio por producto
+- Precio unitario promedio
+- Porcentaje de concentración del Top 10 de productos
+- KPI de concentración de valor con meta definida (0,40)
+
+Elementos clave:
+- Identificación del producto TOP en unidades vendidas.
+- Clasificación de productos según:
+  - Alta rotación
+  - Riesgo de exceso de stock
+- Tabla de productos con alerta de stock (alta demanda, normal, riesgo de exceso).
+- Ranking de productos más vendidos.
+
+Esta vista permite apoyar decisiones relacionadas con abastecimiento, optimización de inventario y foco comercial.
+
+#### 🔸 Conclusiones
+
+**Interpretación del Dashboard**
+
+El Dashboard Ejecutivo fue diseñado como una herramienta de apoyo a la toma de decisiones operativas, con foco en el equilibrio entre demanda y stock, principal problemática identificada en la Tienda Aurelion.
+
+1️⃣ **Ventas**
+
+El análisis de ventas permite comprender la dinámica general del negocio y validar la estabilidad de la demanda.
+La tendencia mensual muestra un comportamiento variable, con una caída puntual en abril y una recuperación sostenida en mayo y junio, lo que evidencia la necesidad de ajustes dinámicos de reposición según el período.
+
+El predominio de categorías de consumo masivo confirma que el negocio depende del volumen de ventas más que de márgenes unitarios elevados, reforzando la importancia de evitar rupturas de stock en productos clave.
+
+2️⃣ **Clientes**
+
+El análisis de clientes aporta contexto para segmentar decisiones comerciales y de reposición.
+Las ventas por ciudad muestran diferencias claras tanto en volumen como en ticket promedio, lo que habilita estrategias diferenciadas para mover stock excedente hacia zonas con mayor capacidad de gasto.
+
+El análisis de medios de pago complementa esta visión, aportando información relevante sobre liquidez y costos operativos, sin afectar el foco principal del sistema.
+
+3️⃣ **Productos**
+
+El análisis de productos es central para el objetivo de la aplicación. El volumen total vendido y la venta promedio por producto indican una alta rotación general, aunque no homogénea entre todos los ítems.
+
+La concentración de ventas del Top 10, junto con el KPI de concentración de valor por debajo del umbral recomendado, muestra una cartera diversificada, lo que reduce el riesgo comercial. Sin embargo, la detección de 43 productos en riesgo de exceso de stock, incluyendo productos sin ventas durante el semestre, expone un problema concreto de sobreabastecimiento.
+
+Esta información permite priorizar productos críticos, ajustar niveles de compra y definir acciones específicas sobre los ítems de baja rotación, alineándose directamente con el objetivo de reducir costos de inventario.
+
+4️⃣ **Conclusión**
+
+En conjunto, el dashboard cumple el objetivo de transformar datos históricos en información accionable, permitiendo:
+- Detectar productos con riesgo de ruptura o exceso de stock.
+- Priorizar productos de alta rotación.
+- Ajustar decisiones de compra y reposición según demanda real y contexto geográfico.
+- Reducir costos asociados al inventario inmovilizado.
+
+De  esta manera, la aplicación funciona como un soporte analítico integral para mejorar la eficiencia operativa y la rentabilidad del negocio.
