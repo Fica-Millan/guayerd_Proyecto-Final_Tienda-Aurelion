@@ -226,7 +226,7 @@ def mostrar_documentacion():
         # ◽ Ventas por mes
         with st.expander("🔸 Gráfica: Ventas Totales por mes"):
             mostrar_graficos([
-                "assets/plots/Ventas_totales_por_mes.png",
+                "assets/plots/Ventas_Totales_por_Mes.png",
             ], columnas=1)
             mostrar_seccion_md(
                 contenido_md,

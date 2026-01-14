@@ -476,38 +476,37 @@ El experimento se ejecutó con PyCaret utilizando las siguientes configuraciones
   - **Remoción de multicolinealidad**: Activada  
   - **Split train/test**: 69%/31%
   - **Cross-validation**: 10 folds
-  - **Seed (session_id)**: 789
+  - **Seed (session_id)**: 456
   - **Métrica principal (sort)**: AUC
 
-3️⃣ **Resultados de la comparación** 🟨🟨🟨🟨🟨🟨🟨🟨🟨
+3️⃣ **Resultados de la comparación** 
 
 Los modelos fueron ordenados por AUC (métrica seleccionada en `compare_models`).
 
   🔸 **Top modelos según AUC**
 
-  | Modelo | Accuracy | AUC | F1-Score | Tiempo (s) |
-  |--------|----------|-----|----------|------------|
-  | Random Forest | 0.9697 | 1 | 0.9689 | 1.263 |
-  | LightGBM | 0.9394 | 0.9728 | 0.9388 | 0.14 |
-  | K Neighbors Classifier |	0.4848	| 0.6918 | 0.4577 |	0.06 |
-  | Logistic Regression	| 0.7576	| 0	| 0.7516	| 6.5733 |
-  | Gradient Boosting Classifier	| 1	| 0 |	1 |	0.15 |
-
+  | Model | Accuracy | AUC | Recall | Prec. | F1 | Kappa | MCC | TT (Sec) |
+  |-------|----------|-----|--------|-------|----|-------|-----|----------|
+  | Random Forest Classifier | 0.9091 | 0.996 | 0.9091 | 0.9333 | 0.9115 | 0.865 | 0.8751 | 1.24 |
+  | Light Gradient Boosting Machine | 0.8636 | 0.9708 | 0.8636 | 0.8884 | 0.8624 | 0.7964 | 0.8073 | 0.19 |
+  | K Neighbors Classifier | 0.5152 | 0.7784 | 0.5152 | 0.5755 | 0.5055 | 0.262 | 0.2755 | 0.0667 |
+  | Logistic Regression | 0.7273 | 0 | 0.7273 | 0.7607 | 0.7267 | 0.5904 | 0.6073 | 2.0833 |
+  | Gradient Boosting Classifier | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 0.1333 |
 
 4️⃣ **Modelo seleccionado**
    
   **Random Forest Classifier** - Mejor desempeño general con:
     
-  - **Accuracy**: 98.57%
-  - **AUC**: 99.71% 
-  - **F1-Score**: 98.48%
+  - **Accuracy**: 90.91%
+  - **AUC**: 99.6% 
+  - **F1-Score**: 91.15%
 
   🔸 **Interpretación**
-    
-  - Los modelos de ensemble (Random Forest, AdaBoost, Gradient Boosting) dominan el ranking
-  - El desempeño general es excelente, con valores de AUC superiores al 99%.
-  - Los tiempos de entrenamiento fueron muy bajos, adecuados para datasets pequeños como este.
-  - El modelo seleccionado presenta una excelente capacidad predictiva y estabilidad.
+  - Random Forest y LightGBM se destacan como los modelos con mejor capacidad discriminativa, reflejada en sus altos valores de AUC.
+  - Random Forest presenta el mejor equilibrio global entre Accuracy, F1-score y métricas de concordancia (Kappa y MCC), lo que justifica su selección como modelo final.
+  - Los valores de AUC igual a 0 observados en Logistic Regression y Gradient Boosting indican problemas en el cálculo de probabilidades o en la validación, por lo que estos modelos no se consideran confiables para la comparación.
+  - Los tiempos de entrenamiento fueron bajos en todos los casos, lo que es consistente con el tamaño reducido del dataset.
+  - En conjunto, el modelo seleccionado muestra alta capacidad predictiva, estabilidad y buen poder de generalización dentro del contexto del problema.
 
 ---
 
@@ -535,7 +534,7 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 - **min_samples_leaf**: 2
 - **max_features**: "sqrt"
 - **class_weight**: "balanced"
-- **random_state**: 789
+- **random_state**: 456
 
 🔹 Configuración del entrenamiento
 
@@ -550,8 +549,8 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
   
   Durante la validación cruzada, el modelo obtuvo:
 
-  - **Accuracy promedio**: 0.6526
-  - **F1-Score promedio**: 0.6320
+  - **Accuracy promedio**: 0.7158
+  - **F1-Score promedio**: 0.7054
 
   Estos valores reflejan un rendimiento moderado, adecuado para un dataset pequeño.
   
@@ -559,21 +558,27 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
     
   | Métrica | Valor |
   |---------|-------|
-  | Accuracy | 0.6000 |
-  | Precision | 0.5857 |
-  | Recall | 0.6000 |
-  | F1-Score | 0.5900 |
+  | Accuracy | 0.7000 |
+  | Precision | 0.6767 |
+  | Recall | 0.7000 |
+  | F1-Score | 0.6793 |
 
   El modelo mantiene consistencia entre validación cruzada y test, indicando  comportamiento estable, aunque con margen de mejora.
   
   🔸 **Curva ROC Multiclase (One-vs-Rest)**
   
-  - **AUC Macro**: 0.8433
-  - **Clase 0 (Baja demanda)**: AUC = 0.92
-  - **Clase 1 (Media demanda)**: AUC = 0.75  
-  - **Clase 2 (Alta demanda)**: AUC = 0.86 
+  El modelo muestra un desempeño global adecuado con un **AUC Macro de 0.8167**, indicando una buena capacidad general de discriminación entre clases.
 
-  La clase “Media” es la más difícil de separar, algo esperable por su posición   intermedia entre “Baja” y “Alta”.
+- **Clase 0 (Baja demanda)**: AUC = 0.88  
+  Buen nivel de separación, con baja tasa de falsos positivos.
+
+- **Clase 1 (Media demanda)**: AUC = 0.62  
+  Es la clase más difícil de discriminar, lo cual es esperable por su naturaleza intermedia entre baja y alta demanda.
+
+- **Clase 2 (Alta demanda)**: AUC = 0.95  
+  Excelente capacidad predictiva, con una separación muy clara respecto al resto de las clases.
+
+En conjunto, el modelo distingue muy bien los extremos de demanda, mientras que la categoría intermedia presenta mayor solapamiento.
 
 <h5>4️⃣ <b>Análisis de resultados</b></h5>
 
@@ -590,11 +595,11 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
     
   **Top 5 features más importantes**:
     
-  1. `cant_transacciones` (0.4151)
-  2. `id_producto` (0.1534) 
-  3. `precio_promedio` (0.1517)
-  4. `ventas_por_transaccion` (0.1355)
-  5. `categoria_Higiene personal` (0.0224)
+  1. `cant_transacciones` (0.3918)
+  2. `ventas_por_transaccion` (0.1848)
+  3. `precio_promedio` (0.1537)
+  4. `id_producto` (0.1421) 
+  5. `categoria_Snacks y golosinas` (0.0275)
 
   Los resultados destacan la importancia del volumen de operaciones y precio promedio, variables clave para entender la demanda.
 
@@ -602,9 +607,9 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 
   | Clase | Precision | Recall | F1-Score |
   |-------|-----------|--------|----------|
-  | Baja (0) | 0.714 | 0.833 | 0.769 |
-  | Media (1) | 0.375 | 0.333 | 0.353 |
-  | Alta (2) | 0.625 | 0.556 | 0.588 |
+  | Baja (0) | 0.733 | 0.917 | 0.815 |
+  | Media (1) | 0.500 | 0.333 | 0.400 |
+  | Alta (2) | 0.778 | 0.778 | 0.778 |
 
   La clase “Media” continúa siendo la más débil; se beneficiaría de más datos o técnicas de oversampling futuro.
 
@@ -623,8 +628,8 @@ Conclusión: el modelo generaliza razonablemente bien, pero sería beneficioso e
   
   | Aspecto | AutoML (PyCaret) | RF Manual |
   |---------|------------------|-----------|
-  | Accuracy Test | 98.57% | 60.00% |
-  | AUC Macro | 99.71% | 84.33% |
+  | Accuracy Test | 90.91% | 70.00% |
+  | AUC Macro | 99.60% | 81.67% |
   | Configuración | Automática | Manual optimizado |
   | Interpretabilidad | Media | Alta |
   | Generalización | Potencial overfitting | Más Realista |

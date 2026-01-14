@@ -97,6 +97,14 @@ def show_random_forest_manual():
     permitiendo comparar los resultados con modelos generados mediante AutoML
     (PyCaret) y profundizar el entendimiento del algoritmo.
     """
+    st.markdown(
+        """
+        <script>
+            window.scrollTo(0, 0);
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         "<h3 style='color:#f1c40f;'>Entrenamiento Manual</h3>",
@@ -169,7 +177,7 @@ def show_random_forest_manual():
         test_size = st.slider("Tamaño del Test (%)", 10, 40, 31) / 100
         
         # Semilla para reproducibilidad
-        random_state = st.number_input("Random State", value=789)
+        random_state = st.number_input("Random State", value=456)
 
     # ===============================================================
     # 4️⃣ VALIDACIONES
@@ -235,7 +243,7 @@ def show_random_forest_manual():
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, 
                 test_size=0.31,     # Mismo que PyCaret
-                random_state=789,   # Mismo que PyCaret
+                random_state=456,   # Mismo que PyCaret
                 stratify=y
             )
             
@@ -247,7 +255,7 @@ def show_random_forest_manual():
                 min_samples_leaf=2,
                 max_features='sqrt',        # Mejor generalización
                 class_weight='balanced',
-                random_state=789,
+                random_state=456,
                 n_jobs=-1
             )
             

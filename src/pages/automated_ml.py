@@ -56,7 +56,7 @@ def run_automl(df, target, normalize, remove_multicollinearity):
     setup(
         data=df,
         target=target,
-        session_id=789,
+        session_id=456,
         normalize=normalize,
         remove_multicollinearity=remove_multicollinearity,
         verbose=False
