@@ -4,11 +4,20 @@
 
 <div align="center">
 
-   ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)
-   ![Status](https://img.shields.io/badge/Status-Terminado-green)
-   ![Author](https://img.shields.io/badge/Autor-Yesica%20Fica%20Mill%C3%A1n-purple)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-F7931E?logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-4C72B0)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
+
+![Status](https://img.shields.io/badge/Status-Terminado-green)
+![Author](https://img.shields.io/badge/Autor-Yesica%20Fica%20Mill%C3%A1n-purple)
 
 </div>
+
 
 # Proyecto Tienda Aurelion
 
