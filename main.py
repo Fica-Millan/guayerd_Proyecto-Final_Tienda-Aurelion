@@ -37,22 +37,22 @@ st.sidebar.markdown(
 opcion = st.sidebar.radio(
     "",  # se deja vacío el label porque se puso un título    
     [
-        "Información general", 
-        "Estadísticas iniciales", 
+        "Información General", 
+        "Estadísticas Iniciales", 
         "EDA Automatizado", 
         "EDA Diagnóstico", 
         "Preprocesamiento ML",
         "ML Automatizado", 
         "Entrenamiento Random Forest", 
         "Dashboard Ejecutivo",
-        "Ver documentación"
+        "ver Documentación"
     ]
 )
 
 # --- Lógica según opción ---
-if opcion == "Información general":
+if opcion == "Información General":
     show_general_info()
-elif opcion == "Estadísticas iniciales":
+elif opcion == "Estadísticas Iniciales":
     show_statistics()
 elif opcion == "EDA Automatizado":
     show_automated_eda()
@@ -66,7 +66,7 @@ elif opcion == "Entrenamiento Random Forest":
     show_random_forest_manual()
 elif opcion == "Dashboard Ejecutivo":
     dashboard_main()     
-elif opcion == "Ver documentación":
+elif opcion == "ver Documentación":
     mostrar_documentacion()
     
 # --- FOOTER ---

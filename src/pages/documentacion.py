@@ -58,7 +58,7 @@ def mostrar_documentacion():
        - Descripción, estructura y variables.
     3. Metodología e implementación:
        - Información general de la aplicación.
-       - Pasos de la metodología aplicada.
+       - Flujo de Usuario.
        - Pseudocódigo del proceso.
     4. Diagrama del flujo:
        - Visualización del flujo general del sistema.
@@ -165,8 +165,8 @@ def mostrar_documentacion():
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
             
         # ◽ Pasos 
-        with st.expander("🔸 Pasos de la metodología"):
-            inicio = contenido_md.find("### Pasos") + len("### Pasos")
+        with st.expander("🔸 Flujo de Usuario"):
+            inicio = contenido_md.find("### Flujo de Usuario") + len("### Flujo de Usuario")
             fin = contenido_md.find("### Pseudocódigo")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
 
@@ -208,7 +208,7 @@ def mostrar_documentacion():
             ], columnas=3)           
             mostrar_seccion_md(
                 contenido_md,
-                inicio_str="# Interpretaciones EDA – Visualizaciones",
+                inicio_str="#### 🔸 Gráfica: distribucion_numericas",
                 fin_str="#### 🔸 Gráfica: correlacion"
             )
 
@@ -254,7 +254,8 @@ def mostrar_documentacion():
             ], columnas=3)
             mostrar_seccion_md(
                 contenido_md,
-                inicio_str="#### 🔸 Gráfica: outliers"
+                inicio_str="#### 🔸 Gráfica: outliers",
+                fin_str="### Preprocesamiento para Machine Learning"
             )                         
                     
                     
