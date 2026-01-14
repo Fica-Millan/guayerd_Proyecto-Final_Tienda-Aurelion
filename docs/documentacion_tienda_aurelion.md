@@ -111,12 +111,12 @@ Cada dataset está estructurado: se organiza en filas que representan registros 
 
 ### Información
 
-🔸 **Nombre del programa:** Proyecto Tienda Aurelion
+1️⃣ **Nombre del programa:** Proyecto Tienda Aurelion
 
-🔸 **Objetivo:**
+2️⃣ **Objetivo:**
   Permitir la exploración interactiva y analítica de los datos de ventas, clientes y productos para apoyar decisiones de compra y reposición mediante visualizaciones, análisis EDA (automatizado y diagnóstico), modelos predictivos de demanda (AutoML y entrenamiento manual) y un Dashboard ejecutivo; incluye exportación y serialización de artefactos (`df_tienda_aurelion.csv`, `assets/plots/`, `models/`).
 
-🔸 **Lenguaje y librerías utilizadas**
+3️⃣ **Lenguaje y librerías utilizadas**
 
   - `Python 3.13` (entorno recomendado; crea un virtualenv para reproducibilidad)
   - Librerías principales (versiones en `requirements.txt`):
@@ -137,11 +137,11 @@ Cada dataset está estructurado: se organiza en filas que representan registros 
     - `openpyxl==3.1.5` (motor para lectura/escritura de Excel)
   - Observación: Las versiones exactas están en `requirements.txt`; para reproducir el entorno usar `pip install -r requirements.txt`.
 
-🔸 **Entrada de datos**
+4️⃣ **Entrada de datos**
   - Archivos Excel: `clientes.xlsx`, `productos.xlsx`, `ventas.xlsx`, `detalle_ventas.xlsx`
   - Archivo de documentación: `documentacion_tienda_aurelion.md`
 
-🔸 **Salida / Visualización:**
+5️⃣ **Salida / Visualización:**
   - Interfaz Streamlit con menú lateral, expanders y vistas por sección.
   - Visualizaciones interactivas: series temporales, correlaciones, rankings y KPIs.
   - EDA automatizado integrado (ProfileReport) y reportes interpretativos.
@@ -150,98 +150,132 @@ Cada dataset está estructurado: se organiza en filas que representan registros 
   - Guardado y serialización de artefactos: figuras en `assets/plots/`, modelos en `models/`, y dataset unificado `df_tienda_aurelion.csv` (listo para reproducibilidad).
 
 🔸 **Funcionalidades principales**
-  - **Información General:** Página interactiva (`general_info.py`) para seleccionar y explorar un dataset:
-    - Muestra fecha de última modificación y tamaño del archivo cuando está disponible.
-    - Presenta una vista previa (`head()`), la estructura de columnas con sus tipos y la cantidad total de registros.
-    - Excluye el dataset unificado (`df_tienda_aurelion`) de la lista para evitar redundancia y carga los datos mediante `load_dataset()`.
-    - En caso de fallo de carga muestra una advertencia; la página es de carácter descriptivo y no modifica los datos.
-  - **Estadísticas Iniciales**: Exploración descriptiva e interactiva por dataset; incluye:
-    - Información general: número de registros y columnas, tipos de columna.
-    - Calidad y cardinalidad: conteo de valores nulos y cantidad de valores únicos por columna.
-    - Resumen estadístico completo con `pandas.describe(include="all")` (numéricas y categóricas).
-    - Visualizaciones adaptadas por dominio usando Matplotlib/Seaborn: histogramas y boxplots para variables numéricas; barras y pie charts para categóricas.
-    - Visualizaciones específicas implementadas en la página `statistics.py`:
-      • Clientes: distribución por ciudad y registros por mes.
-      • Productos: histograma de `precio_unitario` con media/mediana; conteo por categoría.
-      • Ventas: ventas por mes; distribución de `medio_pago` (pie chart).
-      • Detalle Ventas: distribución de `cantidad` e `importe` con líneas de media/mediana y mapa de correlación para variables numéricas.
-    - Las figuras se renderizan como imágenes optimizadas dentro de Streamlit y la página actúa de forma exploratoria (no persiste cambios en los datos ni guarda resultados por defecto).
-  - **EDA Automatizado**: Análisis exploratorio completo del *dataset unificado* utilizando `ydata-profiling`:
-    - Carga/generación del `df_tienda_aurelion` mediante `load_and_merge_datasets()` (se crea si no existe).
-    - Genera un `ProfileReport` (título: "EDA - Dataset Unificado", `explorative=True`) con `ydata-profiling`.
-    - Renderiza el reporte en HTML embebido dentro de Streamlit (`st.components.v1.html(profile.to_html(), height=1000, scrolling=True)`), permitiendo la visualización interactiva del informe en la app.
-    - Comportamiento ante errores: si no se puede cargar el dataset se muestra una advertencia al usuario; el reporte puede ser pesado y conviene ejecutarlo bajo demanda por su coste computacional.
-    - Requisito: `ydata-profiling` instalado y Streamlit debe permitir renderizado de HTML para que el informe se muestre correctamente.
-  - **EDA Diagnóstico**: Análisis en profundidad orientado al negocio, implementado en `diagnostic_eda.py`:
-    - Recategorización automática de productos (`categoria_corregida`) usando `clasificar_producto` y validaciones de fallbacks (`verificar_fallbacks`).
-    - Verificación de la correcta unificación del dataset (`verificar_unificacion_streamlit`) y limpieza y preparación (conversión de fechas, eliminación de columnas redundantes como `importe` cuando coincide con `total_venta`, y renombrado de `fecha` → `fecha_venta`).
-    - Estadísticas descriptivas y análisis de calidad (conteo de nulos, tipos, `describe()` para variables numéricas clave).
-    - Visualizaciones principales y guardado de figuras: histogramas y boxplots para numéricas; matriz de correlación (heatmap); evolución de ventas por mes con destacados (máximo/mínimo); dispersión `cantidad` vs `total_venta` con regresión y anotación de correlación; Top N de productos por categoría y análisis de outliers.
-    - Las figuras se guardan en `assets/plots/` mediante `save_fig_to_disk()` y se muestran con `mostrar_fig(save=True)`; las interpretaciones de las gráficas se cargan desde `docs/documentacion_tienda_aurelion.md` mediante `cargar_interpretacion()`.
-    - Salida final: el dataset enriquecido/modificado se guarda automáticamente como `data/df_tienda_aurelion_modificado.csv` y se ofrece un botón de descarga desde la interfaz.
-  - **Preprocesamiento ML**: Pipeline interactivo orientado a generar un dataset por producto listo para modelado (`data/dataset_ml_productos.csv`):
-    - Carga del dataset modificado `data/df_tienda_aurelion_modificado.csv` (la página falla si no existe y muestra un mensaje de error).
-    - Agrupación por producto y cálculo de métricas agregadas: `total_unidades`, `total_ventas`, `cant_transacciones`, `precio_promedio`.
-    - Feature engineering: `ventas_por_transaccion`, `unidades_por_transaccion` y otros indicadores por producto; chequeos de consistencia entre totales originales y agregados.
-    - Creación de la variable objetivo `nivel_demanda` basada en terciles (baja/media/alta) con diagnóstico de rangos y proporciones por categoría.
-    - Visualizaciones interactivas (Plotly): distribución de `nivel_demanda` y ranking Top-N de unidades por producto.
-    - Transformaciones para ML: One-Hot Encoding de `categoria_corregida`, mapeo numérico del target (`baja`→0, `media`→1, `alta`→2) y eliminación de columnas de alta cardinalidad (p. ej. `nombre_producto`).
-    - Exportación automática del dataset final en `data/dataset_ml_productos.csv` y opción de descarga desde la interfaz.
-  - **ML Automatizado (AutoML)**: Flujo de benchmarking de modelos de clasificación implementado con PyCaret (`automated_ml.py`):
-    - Carga del dataset preprocesado `data/dataset_ml_productos.csv` (la página requiere que el archivo exista y detiene el flujo si no está disponible).
-    - Permite configurar el experimento (normalización y eliminación de multicolinealidad) y ejecutar `setup()`; la configuración muestra el `train/test split` y el número de folds utilizados.
-    - Comparación automática de modelos mediante `compare_models()` (ordenamiento por **AUC**); la ejecución de benchmarking está encapsulada en `run_automl()` y se cachea con `@st.cache_resource` para acelerar re-ejecuciones.
-    - Modelos evaluados: Regresión Logística (`lr`), Random Forest (`rf`), Gradient Boosting (`gbc`), LightGBM (`lightgbm`) y KNN (`knn`).
-    - Presenta la tabla de métricas comparativas y almacena el mejor modelo en `st.session_state['best_model']`.
-    - Permite descargar el mejor modelo en formato `.pkl` y guarda automáticamente una copia en `models/auto_ml_model.pkl` al realizar la descarga; después de guardar, muestra parámetros y metadatos del modelo guardado.
-    - Requisito: PyCaret instalado y dataset preprocesado disponible.
-  - **Entrenamiento Manual (Random Forest)**: Página `random_forest_manual.py` para entrenamiento, evaluación y análisis manual del modelo Random Forest:
-    - Carga del `data/dataset_ml_productos.csv` (la página detiene el flujo y muestra error si no existe) y preview del dataset.
-    - Target fijo: `nivel_demanda` (multiclase: 0=baja,1=media,2=alta); selección automática de features excluyendo columnas agregadas y de fuga de información.
-    - Ajuste interactivo de hiperparámetros: `n_estimators`, `max_depth`, balance de clases, `test_size` y `random_state`.
-    - Validaciones de calidad: chequeo de valores faltantes (detiene si existen) y advertencia cuando el dataset es pequeño (<100 filas).
-    - Entrenamiento estratificado y validación cruzada con número de folds adaptativo (`cv_folds = min(5, len(df)//3)`).
-    - Evaluación completa: Accuracy, Precision, Recall, F1 (ponderado), curva ROC multiclase (One-vs-Rest) con AUC macro, matriz de confusión y Classification Report por clase con diagnóstico automático basado en F1.
-    - Interpretabilidad: `feature_importances_` mostradas en tablas y gráficas; curvas de aprendizaje para diagnosticar under/overfitting.
-    - Guardado y persistencia: figuras guardadas en `assets/plots/` mediante `save_fig_to_disk()` y visualizadas con `mostrar_fig()`; modelo serializado y guardado en `models/random_forest_manual.pkl` y ofrecido para descarga mediante botón.
-  - **Dashboard Ejecutivo**: Implementado en `src/pages/dashboard.py` — dashboard interactivo orientado a la toma de decisiones operativas:
-    - Carga del dataset `data/df_tienda_aurelion_modificado.csv` (la página muestra error y detiene el flujo si no existe) y conversión de fechas para agrega periodos (mes/año).
-    - Panel de KPIs dinámicos calculados desde los datos filtrados: Ticket Promedio, Cantidad de Transacciones, Total de Ventas y Promedio Móvil 3 meses (las variaciones porcentuales se calculan si hay periodo anterior disponible).
-    - Vistas por sección:
-        • Ventas: tendencia mensual con promedio móvil, ventas por categoría y ranking de productos (Top N).
-        • Clientes: ventas por ciudad, ticket promedio y tabla de detalle por ciudad (clientes activos, ticket por ciudad).
-        • Productos: ventas promedio por producto por mes, alertas de stock (Alta Demanda / Riesgo Exceso), concentración Top 10 y top productos.
-    - Filtros globales en sidebar: rango de fechas (Desde / Hasta), multiselect de ciudades, multiselect de categorías, multiselect de medios de pago y slider de rango de ticket por venta; incluye botón **🔄 Resetear todos los filtros** y un resumen de los filtros aplicados.
-    - Interactividad y drill‑down: gráficos Plotly (interactivos) y tablas con `st.dataframe` y `column_config`; búsqueda de productos con selector y botón para ver detalle (KPIs del producto, ventas mensuales, ventas por ciudad y últimas 10 transacciones).
-    - Exportación y persistencia: las visualizaciones son exportables mediante los controles de Plotly o por el navegador; la página no persiste automáticamente PNG/PDF ni guarda figuras en `assets/plots` (otras páginas lo hacen explícitamente).
-    - Estética y accesibilidad: CSS personalizado en la barra lateral para mejorar contraste y usabilidad de los widgets (colores, sliders, botones).
-  - **Documentación Interactiva**: Implementada en `src/pages/documentacion.py` — carga y renderiza el archivo `docs/documentacion_tienda_aurelion.md` dentro de la app y estructura su contenido en **expanders** por secciones (Tema, Problema, Solución, Datasets, Estructura, Información, Pasos, Pseudocódigo, Diagrama del flujo, Interpretaciones EDA, Modelado y Dashboard). Integra imágenes y gráficos desde `assets/` mediante `mostrar_graficos()` y muestra fragmentos del Markdown mediante `mostrar_seccion_md()` o `mostrar_vista_con_imagen()` para replicar vistas del dashboard; presenta avisos cuando el archivo no existe y maneja secciones largas y bloques multimedia (p. ej., Curva ROC, Matriz de Confusión, Importancia de Variables) con divisiones y galerías de imágenes.
+  
+  1️⃣ **Información General:** 
+  
+  Página interactiva (`general_info.py`) para seleccionar y explorar un dataset:
+  - Muestra fecha de última modificación y tamaño del archivo cuando está disponible.
+  - Presenta una vista previa (`head()`), la estructura de columnas con sus tipos y la cantidad total de registros.
+  - Excluye el dataset unificado (`df_tienda_aurelion`) de la lista para evitar redundancia y carga los datos mediante `load_dataset()`.
+  - En caso de fallo de carga muestra una advertencia; la página es de carácter descriptivo y no modifica los datos.
+  
+  2️⃣ **Estadísticas Iniciales**: 
+  
+  Exploración descriptiva e interactiva por dataset; incluye:
+  - Información general: número de registros y columnas, tipos de columna.
+  - Calidad y cardinalidad: conteo de valores nulos y cantidad de valores únicos por columna.
+  - Resumen estadístico completo con `pandas.describe(include="all")` (numéricas y categóricas).
+  - Visualizaciones adaptadas por dominio usando Matplotlib/Seaborn: histogramas y boxplots para variables numéricas; barras y pie charts para categóricas.
+  - Visualizaciones específicas implementadas en la página `statistics.py`:
+    • Clientes: distribución por ciudad y registros por mes.
+    • Productos: histograma de `precio_unitario` con media/mediana; conteo por categoría.
+    • Ventas: ventas por mes; distribución de `medio_pago` (pie chart).
+    • Detalle Ventas: distribución de `cantidad` e `importe` con líneas de media/mediana y mapa de correlación para variables numéricas.
+  - Las figuras se renderizan como imágenes optimizadas dentro de Streamlit y la página actúa de forma exploratoria (no persiste cambios en los datos ni guarda resultados por defecto).
+  
+  3️⃣ **EDA Automatizado**: 
+  
+  Análisis exploratorio completo del *dataset unificado* utilizando `ydata-profiling`:
+  - Carga/generación del `df_tienda_aurelion` mediante `load_and_merge_datasets()` (se crea si no existe).
+  - Genera un `ProfileReport` (título: "EDA - Dataset Unificado", `explorative=True`) con `ydata-profiling`.
+  - Renderiza el reporte en HTML embebido dentro de Streamlit (`st.components.v1.html(profile.to_html(), height=1000, scrolling=True)`), permitiendo la visualización interactiva del informe en la app.
+  - Comportamiento ante errores: si no se puede cargar el dataset se muestra una advertencia al usuario; el reporte puede ser pesado y conviene ejecutarlo bajo demanda por su coste computacional.
+  - Requisito: `ydata-profiling` instalado y Streamlit debe permitir renderizado de HTML para que el informe se muestre correctamente.
+  
+  4️⃣ **EDA Diagnóstico**: 
+  
+  Análisis en profundidad orientado al negocio, implementado en `diagnostic_eda.py`:
+  - Recategorización automática de productos (`categoria_corregida`) usando `clasificar_producto` y validaciones de fallbacks (`verificar_fallbacks`).
+  - Verificación de la correcta unificación del dataset (`verificar_unificacion_streamlit`) y limpieza y preparación (conversión de fechas, eliminación de columnas redundantes como `importe` cuando coincide con `total_venta`, y renombrado de `fecha` → `fecha_venta`).
+  - Estadísticas descriptivas y análisis de calidad (conteo de nulos, tipos, `describe()` para variables numéricas clave).
+  - Visualizaciones principales y guardado de figuras: histogramas y boxplots para numéricas; matriz de correlación (heatmap); evolución de ventas por mes con destacados (máximo/mínimo); dispersión `cantidad` vs `total_venta` con regresión y anotación de correlación; Top N de productos por categoría y análisis de outliers.
+  - Las figuras se guardan en `assets/plots/` mediante `save_fig_to_disk()` y se muestran con `mostrar_fig(save=True)`; las interpretaciones de las gráficas se cargan desde `docs/documentacion_tienda_aurelion.md` mediante `cargar_interpretacion()`.
+  - Salida final: el dataset enriquecido/modificado se guarda automáticamente como `data/df_tienda_aurelion_modificado.csv` y se ofrece un botón de descarga desde la interfaz.
+  
+  5️⃣ **Preprocesamiento ML**: 
+  
+  Pipeline interactivo orientado a generar un dataset por producto listo para modelado (`data/dataset_ml_productos.csv`):
+  - Carga del dataset modificado `data/df_tienda_aurelion_modificado.csv` (la página falla si no existe y muestra un mensaje de error).
+  - Agrupación por producto y cálculo de métricas agregadas: `total_unidades`, `total_ventas`, `cant_transacciones`, `precio_promedio`.
+  - Feature engineering: `ventas_por_transaccion`, `unidades_por_transaccion` y otros indicadores por producto; chequeos de consistencia entre totales originales y agregados.
+  - Creación de la variable objetivo `nivel_demanda` basada en terciles (baja/media/alta) con diagnóstico de rangos y proporciones por categoría.
+  - Visualizaciones interactivas (Plotly): distribución de `nivel_demanda` y ranking Top-N de unidades por producto.
+  - Transformaciones para ML: One-Hot Encoding de `categoria_corregida`, mapeo numérico del target (`baja`→0, `media`→1, `alta`→2) y eliminación de columnas de alta cardinalidad (p. ej. `nombre_producto`).
+  - Exportación automática del dataset final en `data/dataset_ml_productos.csv` y opción de descarga desde la interfaz.
+  
+  6️⃣ **ML Automatizado (AutoML)**: 
+  
+  Flujo de benchmarking de modelos de clasificación implementado con PyCaret (`automated_ml.py`):
+  - Carga del dataset preprocesado `data/dataset_ml_productos.csv` (la página requiere que el archivo exista y detiene el flujo si no está disponible).
+  - Permite configurar el experimento (normalización y eliminación de multicolinealidad) y ejecutar `setup()`; la configuración muestra el `train/test split` y el número de folds utilizados.
+  - Comparación automática de modelos mediante `compare_models()` (ordenamiento por **AUC**); la ejecución de benchmarking está encapsulada en `run_automl()` y se cachea con `@st.cache_resource` para acelerar re-ejecuciones.
+  - Modelos evaluados: Regresión Logística (`lr`), Random Forest (`rf`), Gradient Boosting (`gbc`), LightGBM (`lightgbm`) y KNN (`knn`).
+  - Presenta la tabla de métricas comparativas y almacena el mejor modelo en `st.session_state['best_model']`.
+  - Permite descargar el mejor modelo en formato `.pkl` y guarda automáticamente una copia en `models/auto_ml_model.pkl` al realizar la descarga; después de guardar, muestra parámetros y metadatos del modelo guardado.
+  - Requisito: PyCaret instalado y dataset preprocesado disponible.
+  
+  7️⃣ **Entrenamiento Manual (Random Forest)**: 
+  
+  Página `random_forest_manual.py` para entrenamiento, evaluación y análisis manual del modelo Random Forest:
+  - Carga del `data/dataset_ml_productos.csv` (la página detiene el flujo y muestra error si no existe) y preview del dataset.
+  - Target fijo: `nivel_demanda` (multiclase: 0=baja,1=media,2=alta); selección automática de features excluyendo columnas agregadas y de fuga de información.
+  - Ajuste interactivo de hiperparámetros: `n_estimators`, `max_depth`, balance de clases, `test_size` y `random_state`.
+  - Validaciones de calidad: chequeo de valores faltantes (detiene si existen) y advertencia cuando el dataset es pequeño (<100 filas).
+  - Entrenamiento estratificado y validación cruzada con número de folds adaptativo (`cv_folds = min(5, len(df)//3)`).
+  - Evaluación completa: Accuracy, Precision, Recall, F1 (ponderado), curva ROC multiclase (One-vs-Rest) con AUC macro, matriz de confusión y Classification Report por clase con diagnóstico automático basado en F1.
+  - Interpretabilidad: `feature_importances_` mostradas en tablas y gráficas; curvas de aprendizaje para diagnosticar under/overfitting.
+  - Guardado y persistencia: figuras guardadas en `assets/plots/` mediante `save_fig_to_disk()` y visualizadas con `mostrar_fig()`; modelo serializado y guardado en `models/random_forest_manual.pkl` y ofrecido para descarga mediante botón.
+  
+  8️⃣ **Dashboard Ejecutivo**: 
+  
+  Implementado en `src/pages/dashboard.py` — dashboard interactivo orientado a la toma de decisiones operativas:
+  - Carga del dataset `data/df_tienda_aurelion_modificado.csv` (la página muestra error y detiene el flujo si no existe) y conversión de fechas para agrega periodos (mes/año).
+  - Panel de KPIs dinámicos calculados desde los datos filtrados: Ticket Promedio, Cantidad de Transacciones, Total de Ventas y Promedio Móvil 3 meses (las variaciones porcentuales se calculan si hay periodo anterior disponible).
+  - Vistas por sección:
+    - Ventas: tendencia mensual con promedio móvil, ventas por categoría y ranking de productos (Top N).
+    - Clientes: ventas por ciudad, ticket promedio y tabla de detalle por ciudad (clientes activos, ticket por ciudad).
+    - Productos: ventas promedio por producto por mes, alertas de stock (Alta Demanda / Riesgo Exceso), concentración Top 10 y top productos.
+  - Filtros globales en sidebar: rango de fechas (Desde / Hasta), multiselect de ciudades, multiselect de categorías, multiselect de medios de pago y slider de rango de ticket por venta; incluye botón **🔄 Resetear todos los filtros** y un resumen de los filtros aplicados.
+  - Interactividad y drill‑down: gráficos Plotly (interactivos) y tablas con `st.dataframe` y `column_config`; búsqueda de productos con selector y botón para ver detalle (KPIs del producto, ventas mensuales, ventas por ciudad y últimas 10 transacciones).
+  - Exportación y persistencia: las visualizaciones son exportables mediante los controles de Plotly o por el navegador; la página no persiste automáticamente PNG/PDF ni guarda figuras en `assets/plots` (otras páginas lo hacen explícitamente).
+  - Estética y accesibilidad: CSS personalizado en la barra lateral para mejorar contraste y usabilidad de los widgets (colores, sliders, botones).
+  
+  9️⃣ **Documentación Interactiva**: 
+  
+  Implementada en `src/pages/documentacion.py` — carga y renderiza el archivo `docs/documentacion_tienda_aurelion.md` dentro de la app y estructura su contenido en **expanders** por secciones (Tema, Problema, Solución, Datasets, Estructura, Información, Pasos, Pseudocódigo, Diagrama del flujo, Interpretaciones EDA, Modelado y Dashboard). 
+  
+  Integra imágenes y gráficos desde `assets/` mediante `mostrar_graficos()` y muestra fragmentos del Markdown mediante `mostrar_seccion_md()` o `mostrar_vista_con_imagen()` para replicar vistas del dashboard; presenta avisos cuando el archivo no existe y maneja secciones largas y bloques multimedia (p. ej., Curva ROC, Matriz de Confusión, Importancia de Variables) con divisiones y galerías de imágenes.
   
 🔸 **Estructura del programa**
 
-  - **Carga y Unificación**: 
-    - Función `load_dataset()` con caché de Streamlit (`st.cache_data`) para eficiencia y reproducibilidad.
-    - Generación automática del dataset unificado mediante `load_and_merge_datasets()` y guardado como CSV para uso posterior.
-    - Validaciones y checks: tipos de dato, valores nulos y cardinalidad antes del procesamiento.
-  - **Menú Principal**: Radio buttons en la barra lateral con las opciones:
-    - Información General
-    - Estadísticas Iniciales
-    - EDA Automatizado
-    - EDA Diagnóstico
-    - Preprocesamiento ML
-    - ML Automatizado
-    - Entrenamiento Random Forest
-    - Dashboard Ejecutivo
-    - Ver Documentación
-  - **Módulos Organizados**:
-    - Cargadores de datos (`data_loader.py`) — lectura, validación y unificación de fuentes.
-    - Páginas separadas por funcionalidad (`src/pages/`): `general_info.py`, `statistics.py`, `automated_eda.py`, `diagnostic_eda.py`, `ml_preprocessing.py`, `automl.py`, `random_forest_manual.py`, `dashboard.py`, `documentacion.py`.
-    - Utilidades (`src/utils/`): `figures.py` (guardado/estilo de gráficas), `dashboard_utils.py` (cálculo de KPIs), `export.py` (descarga CSV/PDF/PNG), `validation.py`.
-    - Recursos y artefactos:
-       - `assets/plots/` para figuras generadas automáticamente
-       - `models/` para modelos serializados (`joblib` / `pickle`)
-       - `docs/` y `README.md` para documentación y reproducibilidad
-    - Observaciones de rendimiento: operaciones costosas (ProfileReport, generación de KPIs agregados) se cachean o se ejecutan bajo demanda para mejorar la UX.
+  1️⃣ **Carga y Unificación**: 
+
+  - Función `load_dataset()` con caché de Streamlit (`st.cache_data`) para eficiencia y reproducibilidad.
+  - Generación automática del dataset unificado mediante `load_and_merge_datasets()` y guardado como CSV para uso posterior.
+  - Validaciones y checks: tipos de dato, valores nulos y cardinalidad antes del procesamiento.
+  
+  2️⃣ **Menú Principal**: Radio buttons en la barra lateral con las opciones:
+
+  - Información General
+  - Estadísticas Iniciales
+  - EDA Automatizado
+  - EDA Diagnóstico
+  - Preprocesamiento ML
+  - ML Automatizado
+  - Entrenamiento Random Forest
+  - Dashboard Ejecutivo
+  - Ver Documentación
+  
+  3️⃣ **Módulos Organizados**:
+
+  - Cargadores de datos (`data_loader.py`) — lectura, validación y unificación de fuentes.
+  - Páginas separadas por funcionalidad (`src/pages/`): `general_info.py`, `statistics.py`, `automated_eda.py`, `diagnostic_eda.py`, `ml_preprocessing.py`, `automl.py`, `random_forest_manual.py`, `dashboard.py`, `documentacion.py`.
+  - Utilidades (`src/utils/`): `figures.py` (guardado/estilo de gráficas), `dashboard_utils.py` (cálculo de KPIs), `export.py` (descarga CSV/PDF/PNG), `validation.py`.
+  - Recursos y artefactos:
+    - `assets/plots/` para figuras generadas automáticamente
+    - `models/` para modelos serializados (`joblib` / `pickle`)
+    - `docs/` y `README.md` para documentación y reproducibilidad
+  - Observaciones de rendimiento: operaciones costosas (ProfileReport, generación de KPIs agregados) se cachean o se ejecutan bajo demanda para mejorar la UX.
 
 ---
 
@@ -249,23 +283,29 @@ Cada dataset está estructurado: se organiza en filas que representan registros 
 
 El sistema está diseñado para seguir un orden lógico de análisis, desde la materia prima hasta la toma de decisiones:
 
-<h5>1️⃣ <b>Ingesta y Validación: </b></h5>
+**1️⃣ Ingesta y Validación:**
+
 El usuario inicia cargando los archivos Excel y verificando su estructura en Información General y Estadísticas.
 
-<h5>2️⃣ <b>Diagnóstico de Datos: </b></h5>
+**2️⃣ Diagnóstico de Datos:**
+
 Se ejecuta el EDA Automatizado y Diagnóstico para limpiar el dataset unificado, corregir categorías y detectar anomalías.
 
-<h5>3️⃣ <b>Preparación de Inteligencia:  </b></h5>
+**3️⃣ Preparación de Inteligencia:**
+
 En Preprocesamiento ML, se transforma el histórico de ventas en un dataset de comportamiento por producto (Feature Engineering).
 
-<h5>4️⃣ <b>Modelado Predictivo: </b></h5>
+**4️⃣ Modelado Predictivo:**
+
 Se realiza un benchmarking rápido en AutoML.
 Se ajustan parámetros finos en Entrenamiento Manual para obtener el modelo final (.pkl).
 
-<h5>5️⃣ <b>Ejecución y Monitoreo: </b></h5>
+**5️⃣ Ejecución y Monitoreo:**
+
 Los resultados se visualizan en el Dashboard Ejecutivo, donde se aplican filtros globales para extraer insights operativos.
 
-<h5>6️⃣ <b>Consulta Técnica: </b></h5>
+**6️⃣ Consulta Técnica:**
+
 En cualquier momento, el usuario puede acceder a Documentación para entender la lógica interna y los diagramas del sistema.
 
 ---
@@ -420,11 +460,13 @@ Preparar el dataset para entrenar modelos de clasificación que predigan el nive
 
 2️⃣ **Metodología aplicada**
 
-🔸 Agrupación por producto
+**🔹 Agrupación por producto**:
+
   - Dataset original: 343 transacciones individuales
   - Dataset agrupado: 95 productos únicos
 
-🔸 Variables creadas:
+**🔹 Variables creadas**:
+
   - `total_unidades`: Suma de unidades vendidas por producto
   - `total_ventas`: Ingreso total generado por producto
   - `cant_transacciones`: Número de ventas únicas
@@ -432,7 +474,7 @@ Preparar el dataset para entrenar modelos de clasificación que predigan el nive
   - `ventas_por_transaccion`: Ingreso promedio por transacción
   - `unidades_por_transaccion`: Unidades promedio por transacción
 
-🔸 **Variable objetivo**: `Nivel de demanda`
+**🔹 Variable objetivo**: `Nivel de demanda`
 
   Basada en percentiles de `total_unidades`:
 
@@ -445,7 +487,8 @@ Preparar el dataset para entrenar modelos de clasificación que predigan el nive
 
   Distribución balanceada y adecuada para clasificación multiclase.
 
-🔸 Transformaciones aplicadas
+**🔹 Transformaciones aplicadas**:
+
   - One-Hot Encoding de `categoria_corregida` (10 categorías)
   - Eliminación de `nombre_producto` por alta cardinalidad
   - Mapping del target:
@@ -483,7 +526,7 @@ El experimento se ejecutó con PyCaret utilizando las siguientes configuraciones
 
 Los modelos fueron ordenados por AUC (métrica seleccionada en `compare_models`).
 
-  🔸 **Top modelos según AUC**
+  🔹 **Top modelos según AUC**
 
   | Model | Accuracy | AUC | Recall | Prec. | F1 | Kappa | MCC | TT (Sec) |
   |-------|----------|-----|--------|-------|----|-------|-----|----------|
@@ -501,7 +544,7 @@ Los modelos fueron ordenados por AUC (métrica seleccionada en `compare_models`)
   - **AUC**: 99.6% 
   - **F1-Score**: 91.15%
 
-  🔸 **Interpretación**
+  🔹 **Interpretación**
   - Random Forest y LightGBM se destacan como los modelos con mejor capacidad discriminativa, reflejada en sus altos valores de AUC.
   - Random Forest presenta el mejor equilibrio global entre Accuracy, F1-score y métricas de concordancia (Kappa y MCC), lo que justifica su selección como modelo final.
   - Los valores de AUC igual a 0 observados en Logistic Regression y Gradient Boosting indican problemas en el cálculo de probabilidades o en la validación, por lo que estos modelos no se consideran confiables para la comparación.
@@ -512,13 +555,13 @@ Los modelos fueron ordenados por AUC (métrica seleccionada en `compare_models`)
 
 ### Entrenamiento Manual: Random Forest
 
-<h5>1️⃣ <b>Objetivo</b></h5>
+**1️⃣ Objetivo**
     
 Implementar manualmente un modelo Random Forest Classifier para predecir el nivel de demanda de productos, evaluando su desempeño mediante validación cruzada, métricas de test, curva ROC multiclase, matriz de confusión, curva de aprendizaje e importancia de variables.
 
 Este enfoque permite obtener un modelo transparente, reproducible y completamente controlado por el analista, ideal para evaluar real capacidad de generalización.
 
-<h5>2️⃣ <b>Configuración del modelo</b></h5>
+**2️⃣ Configuración del modelo**
 
 El modelo fue configurado manualmente en la aplicación Streamlit con los siguientes parámetros:
 
@@ -543,9 +586,9 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 - **Validación cruzada**: 5 folds (definido dinámicamente según el tamaño del dataset)
 - **Dataset usado**: 95 productos procesados
 
-<h5>3️⃣ <b>Métricas de evaluación</b></h5>
+**3️⃣ Métricas de evaluación**
 
-  🔸 **Validación Cruzada (5 folds)**
+  🔹 **Validación Cruzada (5 folds)**
   
   Durante la validación cruzada, el modelo obtuvo:
 
@@ -554,7 +597,7 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 
   Estos valores reflejan un rendimiento moderado, adecuado para un dataset pequeño.
   
-  🔸 **Métricas en el Conjunto de Test**
+  🔹 **Métricas en el Conjunto de Test**
     
   | Métrica | Valor |
   |---------|-------|
@@ -565,7 +608,7 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 
   El modelo mantiene consistencia entre validación cruzada y test, indicando  comportamiento estable, aunque con margen de mejora.
   
-  🔸 **Curva ROC Multiclase (One-vs-Rest)**
+  🔹 **Curva ROC Multiclase (One-vs-Rest)**
   
   El modelo muestra un desempeño global adecuado con un **AUC Macro de 0.8167**, indicando una buena capacidad general de discriminación entre clases.
 
@@ -580,9 +623,9 @@ El modelo fue configurado manualmente en la aplicación Streamlit con los siguie
 
 En conjunto, el modelo distingue muy bien los extremos de demanda, mientras que la categoría intermedia presenta mayor solapamiento.
 
-<h5>4️⃣ <b>Análisis de resultados</b></h5>
+**4️⃣ Análisis de resultados**
 
-  🔸 **Matriz de Confusión**
+  🔹 **Matriz de Confusión**
   
   La matriz evidencia:
 
@@ -591,7 +634,7 @@ En conjunto, el modelo distingue muy bien los extremos de demanda, mientras que 
 
   Este comportamiento se debe a la naturaleza del problema: la clase media es más ambigua y con menor soporte.
 
-  🔸 **Importancia de variables**
+  🔹 **Importancia de variables**
     
   **Top 5 features más importantes**:
     
@@ -603,7 +646,7 @@ En conjunto, el modelo distingue muy bien los extremos de demanda, mientras que 
 
   Los resultados destacan la importancia del volumen de operaciones y precio promedio, variables clave para entender la demanda.
 
-<h5><b>Classification Report por clase</b></h5>
+<h6><b>Classification Report por clase:</b></h6>
 
   | Clase | Precision | Recall | F1-Score |
   |-------|-----------|--------|----------|
@@ -613,7 +656,7 @@ En conjunto, el modelo distingue muy bien los extremos de demanda, mientras que 
 
   La clase “Media” continúa siendo la más débil; se beneficiaría de más datos o técnicas de oversampling futuro.
 
-<h5><b>Curva de aprendizaje</b></h5>
+<h6><b>Curva de aprendizaje:</b></h6>
 
 La curva de aprendizaje muestra:
 - Brecha moderada entre entrenamiento y validación
@@ -622,7 +665,7 @@ La curva de aprendizaje muestra:
 
 Conclusión: el modelo generaliza razonablemente bien, pero sería beneficioso entrenarlo con más datos.
 
-<h5>5️⃣ <b>Conclusiones generales</b></h5>
+**5️⃣ Conclusiones generales**
 
 **Comparativa: AutoML vs Random Forest Manual**
   
@@ -640,7 +683,7 @@ Conclusión: el modelo generaliza razonablemente bien, pero sería beneficioso e
 - El RF Manual, aunque menos preciso, es más interpretable y más honesto respecto a la generalización real.
 - En datasets pequeños como este, el modelo manual suele reflejar mejor el rendimiento esperado en producción.
 
-<h5>6️⃣ <b>Recomendaciones para producción</b></h5>
+**6️⃣ Recomendaciones para producción**
     
 1. **Modelo sugerido**: 
     - Random Forest Manual → Mayor generalización y transparencia.
@@ -660,7 +703,7 @@ Conclusión: el modelo generaliza razonablemente bien, pero sería beneficioso e
     - Probar embeddings o técnicas de reducción de dimensionalidad
     - Ajustar hiperparámetros adicionales
 
-<h5>7️⃣ <b>Impacto para el Negocio</b></h5>
+**7️⃣ Impacto para el Negocio**
 
 El modelo desarrollado permite:
 

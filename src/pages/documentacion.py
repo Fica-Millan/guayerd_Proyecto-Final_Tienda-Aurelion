@@ -141,7 +141,7 @@ def mostrar_documentacion():
             
         # ◽ Problema
         with st.expander("🔸 Descripción del dataset"):
-            inicio = contenido_md.find("### Datasets: definición, columnas y tipos")
+            inicio = contenido_md.find("### Datasets: definición, columnas y tipos") + len("### Datasets: definición, columnas y tipos")
             fin = contenido_md.find("### Estructura")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
             
@@ -161,10 +161,22 @@ def mostrar_documentacion():
         # ◽ Información
         with st.expander("🔸 Información de la aplicación"):
             inicio = contenido_md.find("### Información") + len("### Información")
-            fin = contenido_md.find("### Pasos")
+            fin = contenido_md.find("🔸 **Funcionalidades principales**")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
             
-        # ◽ Pasos 
+        # ◽ Funcionalidades principales
+        with st.expander("🔸 Funcionalidades principales"):
+            inicio = contenido_md.find("🔸 **Funcionalidades principales**") + len("🔸 **Funcionalidades principales**")
+            fin = contenido_md.find("🔸 **Estructura del programa**")
+            st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
+
+        # ◽ Estructura del programa
+        with st.expander("🔸 Estructura del programa"):
+            inicio = contenido_md.find("🔸 **Estructura del programa**") + len("🔸 **Estructura del programa**")
+            fin = contenido_md.find("### Flujo de Usuario")
+            st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)                        
+
+        # ◽ Flujo de Usuario 
         with st.expander("🔸 Flujo de Usuario"):
             inicio = contenido_md.find("### Flujo de Usuario") + len("### Flujo de Usuario")
             fin = contenido_md.find("### Pseudocódigo")
@@ -267,22 +279,22 @@ def mostrar_documentacion():
 
         # ◽ Preprocesamiento
         with st.expander("🔸 Preprocesamiento"):
-            inicio = contenido_md.find("### Preprocesamiento para Machine Learning") 
+            inicio = contenido_md.find("### Preprocesamiento para Machine Learning") + len("### Preprocesamiento para Machine Learning")
             fin = contenido_md.find("### AutoML: Benchmarking con PyCaret")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
 
         # ◽ AutoML
         with st.expander("🔸 Auto Machine Learning"):
-            inicio = contenido_md.find("### AutoML: Benchmarking con PyCaret") 
+            inicio = contenido_md.find("### AutoML: Benchmarking con PyCaret") + len("### AutoML: Benchmarking con PyCaret")
             fin = contenido_md.find("### Entrenamiento Manual: Random Forest")
             st.markdown(contenido_md[inicio:fin], unsafe_allow_html=True)
            
         # ◽ Random Forest Manual           
         with st.expander("🔸 Entrenamiento Manual"):      
                 
-            inicio = contenido_md.find("### Entrenamiento Manual: Random Forest") 
+            inicio = contenido_md.find("### Entrenamiento Manual: Random Forest") + len("### Entrenamiento Manual: Random Forest")
 
-            # 🔥 si no encuentra otro título, usa el final del archivo
+            # Si no encuentra otro título, usa el final del archivo
             fin = contenido_md.find("\n### ", inicio)
             if fin == -1:
                 fin = len(contenido_md)
@@ -290,10 +302,10 @@ def mostrar_documentacion():
             texto = contenido_md[inicio:fin]
 
             # ---- Dividir por marcadores ----
-            partes = texto.split("🔸 **Curva ROC Multiclase (One-vs-Rest)**")
+            partes = texto.split("🔹 **Curva ROC Multiclase (One-vs-Rest)**")
             st.markdown(partes[0], unsafe_allow_html=True)
 
-            # ---- 🔸 Gráfico ROC ----
+            # ---- Gráfico ROC ----
             st.markdown(
                 '<p style="font-size:18px; font-weight:600; margin-bottom:0;">Curva ROC Multiclase</p>',
                 unsafe_allow_html=True
@@ -303,10 +315,10 @@ def mostrar_documentacion():
             ], columnas=1)
 
             # ---- Resto del texto hasta la matriz ----
-            partes = partes[1].split("🔸 **Matriz de Confusión**")
+            partes = partes[1].split("🔹 **Matriz de Confusión**")
             st.markdown(partes[0], unsafe_allow_html=True)
 
-            # ---- 🔸 Matriz de confusión ----
+            # ---- Matriz de confusión ----
             st.markdown(
                 '<p style="font-size:18px; font-weight:600; margin-bottom:0;">Matriz de Confusión</p>',
                 unsafe_allow_html=True
@@ -316,10 +328,10 @@ def mostrar_documentacion():
             ], columnas=1)
 
             # ---- Resto hasta importancia variables ----
-            partes = partes[1].split("🔸 **Importancia de variables**")
+            partes = partes[1].split("🔹 **Importancia de variables**")
             st.markdown(partes[0], unsafe_allow_html=True)
 
-            # ---- 🔸 Importancia de variables ----
+            # ---- Importancia de variables ----
             st.markdown(
                 '<p style="font-size:18px; font-weight:600; margin-bottom:0;">Importancia de Variables</p>',
                 unsafe_allow_html=True
@@ -329,10 +341,10 @@ def mostrar_documentacion():
             ], columnas=1)
 
             # ---- Resto hasta classification report ----
-            partes = partes[1].split("<h5><b>Classification Report por clase</b></h5>")
+            partes = partes[1].split("<h6><b>Classification Report por clase:</b></h6>")
             st.markdown(partes[0], unsafe_allow_html=True)
 
-            # ---- 🔸 Classification Report ----
+            # ---- Classification Report ----
             st.markdown(
                 '<p style="font-size:18px; font-weight:600; margin-bottom:0;">Reporte de Métricas por Clase</p>',
                 unsafe_allow_html=True
@@ -342,10 +354,10 @@ def mostrar_documentacion():
             ], columnas=1) 
 
             # ---- Resto hasta learning curve ----
-            partes = partes[1].split("<h5><b>Curva de aprendizaje</b></h5>")
+            partes = partes[1].split("<h6><b>Curva de aprendizaje:</b></h6>")
             st.markdown(partes[0], unsafe_allow_html=True)
 
-            # ---- 🔸 Learning curve ----
+            # ---- Learning curve ----
             st.markdown(
                 '<p style="font-size:18px; font-weight:600; margin-bottom:0;">Curva de Aprendizaje</p>',
                 unsafe_allow_html=True
