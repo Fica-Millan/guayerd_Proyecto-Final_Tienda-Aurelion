@@ -6,7 +6,7 @@ from PIL import Image
 from src.pages.general_info import show_general_info
 from src.pages.statistics import show_statistics
 from src.pages.documentacion import mostrar_documentacion
-from src.pages.automated_eda import show_automated_eda
+# from src.pages.automated_eda import show_automated_eda
 from src.pages.diagnostic_eda import show_diagnostic_eda
 from src.pages.ml_preprocessing import show_ml_preprocessing
 from src.pages.automated_ml import show_automated_ml
@@ -39,7 +39,6 @@ opcion = st.sidebar.radio(
     [
         "Información General", 
         "Estadísticas Iniciales", 
-        "EDA Automatizado", 
         "EDA Diagnóstico", 
         "Preprocesamiento ML",
         "ML Automatizado", 
@@ -54,8 +53,8 @@ if opcion == "Información General":
     show_general_info()
 elif opcion == "Estadísticas Iniciales":
     show_statistics()
-elif opcion == "EDA Automatizado":
-    show_automated_eda()
+# elif opcion == "EDA Automatizado":
+#     show_automated_eda()
 elif opcion == "EDA Diagnóstico":
     show_diagnostic_eda()
 elif opcion == "Preprocesamiento ML":
